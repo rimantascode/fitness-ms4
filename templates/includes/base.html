@@ -33,8 +33,12 @@
 	<title>Fitness World {% block extra_title %}{% endblock %}</title>
 </head>
 
-<body>
 
+<body>
+<header class="container-fluid"></header>
+    {% if messages%}
+    <div class="messages-block"></div>
+    {%endif%}
 
 	{% block page_header %}
 	{% endblock %}
