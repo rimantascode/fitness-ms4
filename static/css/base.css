@@ -4,3 +4,11 @@
 .nav-nav{
     width:150px!important;
 }
+
+.mystyle {
+  width: 60vw!important;
+  background-color: coral;
+  margin-left:10px;
+  color: white;
+  font-size: 25px;
+}
