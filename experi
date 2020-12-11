@@ -1,50 +1,125 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-bg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Fitness World</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse mx-auto" id="main-nav">
-      <ul class="navbar-nav mx-auto">
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle" href="#" id="all-products" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            All Products
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="all-products">
-            <li><a class="dropdown-item" href="#">By Price</a></li>
-            <li><a class="dropdown-item" href="#">By Ratings</a></li>
-            <li><a class="dropdown-item" href="#">By Newests</a></li>
-            <li><a class="dropdown-item" href="#">All products</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle" href="#" id="plans" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Useful Items
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="plans">
-            <li><a class="dropdown-item" href="#">Nutrition</a></li>
-            <li><a class="dropdown-item" href="#">Exercises</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle" href="#" id="useful-items" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Plans
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="useful-items">
-            <li><a class="dropdown-item" href="#">Kitchen Helpers</a></li>
-            <li><a class="dropdown-item" href="#">Fitness Helpers</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle" href="#" id="special-offers" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            All Products
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="special-offers">
-            <li><a class="dropdown-item" href="#">Deals</a></li>
-            <li><a class="dropdown-item" href="#">All specials</a></li>
-          </ul>
-        </li>
-      </ul>
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+
+	{% block meta %}
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% endblock %}
+
+	{% block extra_meta %}
+	{% endblock %}
+
+	{% block corecss %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">  
+    {% endblock %}
+
+	{% block extra_css %}
+	{% endblock %}
+
+	{% block corejs %}
+	<script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+	{% endblock %}
+
+	{% block extra_js %}
+	{% endblock %}
+
+	<title>Fitness World {% block extra_title %}{% endblock %}</title>
+</head>
+
+
+<body>
+<!-- The top header which will disapear in in smaller windows, will be converted in the Icons only-->
+<header class="container-fluid m-0 p-0">
+    <!-- Logo-->
+    <div class="d-flex flex-row d-none d-lg-block">
+        <div class="col-lg-4 text-center my-auto d-inline-flex">
+            <a class="nav-link" href="{% url 'home' %}">
+                <h2 class="logo-font text-dark">Fitness Workd</h2>
+            </a>
+        </div>
+        <div class="col-lg-4 text-center my-auto d-inline-flex">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="search for a product" aria-label="search for a product" aria-describedby="search-product">
+                <button class="btn btn-outline-warning" type="button" id="search-product">Search</button>
+            </div>
+        </div>
+        <!-- My account button -->
+        <div class="col-lg-4 mx-auto my-auto d-inline flexbox-container">
+            <div class="btn-group">
+                <ul class="list-unstyled my-auto align-midle">
+                    <li class="list-inline-item my-auto">
+                        <button type="button" class="btn btn-danger">My account</button>
+                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <a href="" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <!--Here will be displayed the shopping cart amount-->
+                    <li class="list-inline-item align-middle">
+                        <a class="text-dark fs-1 {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}" href="">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="ps-3 list-inline-item align-midle"> 
+                               {% if grand_total %}
+                                ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                $0.00
+                                {% endif %}
+                            </span>
+                        </a>
+                    </li>
+                </ul>        
+            </div>
+        </div>
     </div>
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-bg">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+         {% include 'includes/mobile-nav-header.html' %}
+        <div class="collapse navbar-collapse mx-auto" id="main-nav">
+        <ul class="navbar-nav mx-auto">           
+                    {% include 'includes/main-nav.html' %}
+                    
+            </ul>
+        </div>
+        </div>
 </nav>
+</header>
+    {% if messages%}
+    <div class="messages-block"></div>
+    {%endif%}
+
+	{% block page_header %}
+	{% endblock %}
+
+	{% block content %}
+	{% endblock %}
+
+	{% block postloadjs %}
+	{% endblock %}
+
+
+</body>
+
+</html>
+

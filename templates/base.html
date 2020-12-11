@@ -37,25 +37,26 @@
 
 <body>
 <!-- The top header which will disapear in in smaller windows, will be converted in the Icons only-->
-<header class="container-fluid m-0 p-0">
+<header class="container-fluid m-0 p-0 my-auto">
     <!-- Logo-->
-    <div class="d-flex flex-row d-none d-lg-block">
-        <div class="col-lg-4 text-center my-auto d-inline-flex">
+<div class="d-none d-lg-inline my-auto">
+    <div class="row ">
+        <div class="col-lg-4 my-auto">
             <a class="nav-link" href="{% url 'home' %}">
                 <h2 class="logo-font text-dark">Fitness Workd</h2>
             </a>
         </div>
-        <div class="col-lg-4 text-center my-auto d-inline-flex">
+        <div class="col-lg-4 text-center my-auto">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="search for a product" aria-label="search for a product" aria-describedby="search-product">
                 <button class="btn btn-outline-warning" type="button" id="search-product">Search</button>
             </div>
         </div>
         <!-- My account button -->
-        <div class="col-lg-4 mx-auto my-auto d-inline">
+        <div class="col-lg-4 flexbox-container my-auto">
             <div class="btn-group">
-                <ul class="list-unstyled my-auto align-midle">
-                    <li class="list-inline-item my-auto">
+                <ul class="list-unstyled m-0 my-auto">
+                    <li class="list-inline-item">
                         <button type="button" class="btn btn-danger">My account</button>
                         <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="visually-hidden">Toggle Dropdown</span>
@@ -75,13 +76,13 @@
                     </li>
                     <!--Here will be displayed the shopping cart amount-->
                     <li class="list-inline-item align-middle">
-                        <a class="text-dark fs-1 {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}" href="">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="ps-3 list-inline-item align-midle"> 
+                        <a class="text-dark fs-3 {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}" href="">
+                            <i class="fas fa-shopping-cart"></i><span> </span>
+                            <span class="list-inline-item align-midle">
                                {% if grand_total %}
                                 ${{ grand_total|floatformat:2 }}
                                 {% else %}
-                                $0.00
+                                £0.00
                                 {% endif %}
                             </span>
                         </a>
@@ -89,6 +90,7 @@
                 </ul>        
             </div>
         </div>
+    </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-bg">
     <div class="container-fluid">
