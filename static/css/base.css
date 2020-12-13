@@ -33,7 +33,7 @@
 .expand-search-box {
     width:70vw;
 }
-/*--------------------------------------------- HEADER----------*/
+/*--------------------------------------------- PRODUCTS----------*/
 .center {
   position: absolute;
   top: 50%;
@@ -46,6 +46,12 @@
   object-fit:cover;
 }
 
+.hr-class {
+    height:2px !important;
+    border-width:0 !important;
+    color:#D40000 !important;
+    background-color:#D40000 !important;
+}
 @media (min-width: 992px) {
     .hide-ul {
       display:none;
