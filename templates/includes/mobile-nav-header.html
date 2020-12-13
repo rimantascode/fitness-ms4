@@ -1,31 +1,44 @@
-<li class="list-inline-item">
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle d-block d-lg-none" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-  Saerch
-  </button>
-  <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton list-unstyled" >
-    <li id="dropdowns"> 
-    <div class="input-group mb-3">
-        <form>
-            <input class="w-10" type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-        </form>
+<li class="nav-item-1 nav-item dropdown text-center list-inline-item my-auto d-block d-lg-none">
+      <a class="nav-link dropdown-toggle text-light" href="#" id="search-item" role="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+            d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" /> 
+        <path fill-rule="evenodd"
+            d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+        </svg>  
+    </a>
+    <div>
+        <p class="text-light my-0">Search</p>
     </div>
-    </li>
-  </ul>
-</div>
+    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="search-item">
+        <div class="input-group m-3 expand-search-box">
+          <input type="text" class="form-control"  name="q" placeholder="search for a product" aria-label="Recipient's username"
+                aria-describedby="button-addon2">           
+            <button class="list-inline-item btn btn-outline-secondary" type="button" id="button-addon2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                    <path fill-rule="evenodd"
+                        d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                </svg>
+            </button>
+        </div>
+    </ul>
 </li>
-<li>
-<li class="list-inline-item dropdown">
-	<a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown"
-		aria-haspopup="true" aria-expanded="false">
-		<div class="text-center">
-			<div><i class="fas fa-user fa-lg"></i></div>
-			<p class="my-0">My Account</p>
-		</div>
-	</a>
-	<div class="dropdown-menu border-0" aria-labelledby="user-options">
-		{% if request.user.is_authenticated %}
+<li class="nav-item-2 nav-item dropdown text-center list-inline-item d-block d-lg-none">
+    <a class="nav-link dropdown-toggle text-light" href="#" id="my-account" role="button"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+        </svg>
+    </a>
+    <div>
+        <p class="text-light my-0">My account</p>
+    </div>
+    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="my-account">
+        {% if request.user.is_authenticated %}
 		{% if request.user.is_superuser %}
 		<a href="" class="dropdown-item">Product Management</a>
 		{% endif %}
@@ -35,28 +48,22 @@
 		<a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
 		<a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
 		{% endif %}
-	</div>
+    </ul>
 </li>
-<li class="list-inline-item">
-	<a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none"
+<li class="nav-item-3 nav-item text-light text-center list-inline-item d-block d-lg-none">
+	<a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none text-light"
 		href="">
-		<div class="text-center">
-			<div><i class="fas fa-shopping-bag fa-lg"></i></div>
-			<p class="my-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="bi bi-cart-fill"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+            </svg>
+			<p class="my-2">
 				{% if grand_total %}
 				${{ grand_total|floatformat:2 }}
 				{% else %}
 				$0.00
 				{% endif %}
 			</p>
-		</div>
 	</a>
 </li>
- <script>
-var myDropdown = document.getElementById('dropdownMenuButton')
-myDropdown.addEventListener('show.bs.dropdown', function () {
-  var element = document.getElementById("dropdowns");
-  element.classList.add("mystyle");
-
-})
- </script>

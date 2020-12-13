@@ -1,19 +1,37 @@
+/*--------------------------------------------- HEADER----------*/
 .nav-bg {
     background:#000F9A !important;
 }
+
 .nav-nav{
     width:150px!important;
 }
 
-.mystyle {
-  width: 60vw!important;
-  background-color: coral;
-  margin-left:10px;
-  color: white;
-  font-size: 25px;
-}
-.flexbox-container {
+.align-button-and-cart {
     display:flex;
     justify-content:space-evenly;
     align-items:center;
 }
+
+.align-icons {
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.nav-item-1 {
+    width:100px;
+}
+
+.nav-item-2 {
+     width:100px; 
+}
+
+.nav-item-3 {
+     width:100px;
+     height:68px;
+}
+.expand-search-box {
+    width:70vw;
+}
+/*--------------------------------------------- HEADER----------*/
+
