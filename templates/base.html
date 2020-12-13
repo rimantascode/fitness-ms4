@@ -96,8 +96,8 @@
     <div class="container-fluid d-flex">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <ul class="d-block d-lg-none list-unstyled list-inline mx-auto my-auto align-icons w-75">
+        </button>      
+        <ul class=" hide-ul list-unstyled list-inline mx-auto align-iconss my-auto w-75">
             {% include 'includes/mobile-nav-header.html' %}
         </ul>
         <div class="collapse navbar-collapse" id="main-nav">
@@ -109,6 +109,7 @@
         </div>
 </nav>
 </header>
+
     {% if messages%}
     <div class="messages-block"></div>
     {%endif%}
