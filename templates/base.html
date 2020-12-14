@@ -40,17 +40,17 @@
 <header class="container-fluid m-0 p-0 my-auto">
     <!-- Logo-->
 <div class="d-none d-lg-inline my-auto">
-    <div class="row ">
+    <div class="row">
         <div class="col-lg-4 my-auto">
             <a class="nav-link" href="{% url 'home' %}">
                 <h2 class="logo-font text-dark">Fitness Workd</h2>
-            </a>
+            </a>     
         </div>
         <div class="col-lg-4 text-center my-auto">
-            <form>
+            <form method="GET" action="{% url 'products' %}">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="search for a product" aria-label="search for a product" aria-describedby="search-product">
-                    <button class="btn btn-outline-warning" type="button" id="search-product">Search</button>
+                    <input type="text" class="form-control" placeholder="search for a product" name="q" aria-label="search for a product" aria-describedby="search-product">
+                    <button class="btn btn-outline-warning" type="submit" id="search-product">Search</button>
                 </div>
             </form>
         </div>
