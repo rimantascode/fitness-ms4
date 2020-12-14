@@ -5,8 +5,8 @@
             All Products
           </a>
           <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="all-products">
-            <li><a class="dropdown-item" href="#">By Price</a></li>
-            <li><a class="dropdown-item" href="#">By Ratings</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Ratings</a></li>
             <li><a class="dropdown-item" href="#">By Newests</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
           </ul>
@@ -34,8 +34,8 @@
             Special Offers
           </a>
           <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="special-offers">
-            <li><a class="dropdown-item" href="#">Deals</a></li>
-            <li><a class="dropdown-item" href="#">All specials</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=deals">Deals</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=deals">All specials</a></li>
           </ul>
         </li>
       </ul>
