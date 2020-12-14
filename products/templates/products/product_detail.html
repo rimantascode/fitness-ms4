@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Products detail page -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center p-0 m-0">
+            <hr class="hr-class my-1">
+                <h1 class="logo-font ">{{product.name}} </h1>
+            <hr class="hr-class my-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 p-0 m-0 mx-auto">
+            {% if product.image_url %}  
+            <a href="{{product.image_url}}" target="_blank">
+                <img src="{{product.image_url}}" class="card-img-top img-fluid" alt="{{product.name}}">
+            </a>
+            {% elif product.image %}
+            <a href="{{product.image.url}}" target="_blank">
+                <img src="{{product.image.url}}" class="card-img-top img-fluid"  alt="{{product.name}}">
+            </a>
+            {% else %}
+            <a href="{{product.image_url}}" target="_blank">
+                <img src="{{MEDIA_URL}}no-image.jpg" class="card-img-top img-fluid" alt="{{product.name}}">
+            {%endif%}
+            </a>   
+        </div> 
+        <div class="col-12 col-md-6 col-lg-6">
+            <h2 class="fs-3 mx-auto text-center my-3"><strong>Description</strong></h2>
+            <p>{{product.description}}</p>
+            <span>£{{product.price}}</span>
+            {% if product.rating %}
+            <span class="me-2">Rating: {{product.rating}}</span>
+            {% endif %}
+        </div> 
+    </div>
+</div>           
+{% endblock %}
+
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus dolorem quaerat saepe obcaecati aspernatur velit officiis ratione, corrupti ab, impedit, rerum numquam qui ipsam illo beatae dicta unde doloremque modi?
+
+
