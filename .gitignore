@@ -2,5 +2,6 @@ core.Microsoft*
 core.mongo*
 core.python*
 env.py
+db.sqlite
 __pycache__/
 *.py[cod]

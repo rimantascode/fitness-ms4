@@ -16,8 +16,8 @@
             Accessories
           </a>
           <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="plans">
-            <li><a class="dropdown-item" href="#">Kitchen Helpers</a></li>
-            <li><a class="dropdown-item" href="#">Exercises Helpers</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=kitchen_helpers">Kitchen Helpers</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=exercises_helpers">Exercises Helpers</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown px-2">
@@ -25,8 +25,8 @@
             Plans
           </a>
           <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="useful-items">
-            <li><a class="dropdown-item" href="#">Nutritions Plans</a></li>
-            <li><a class="dropdown-item" href="#">Exercises Plans</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=nutrition_plans">Nutritions Plans</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=exercises_plans">Exercises Plans</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown px-2">
