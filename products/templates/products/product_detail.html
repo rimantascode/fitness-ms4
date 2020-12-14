@@ -33,6 +33,11 @@
             <span>£{{product.price}}</span>
             {% if product.rating %}
             <span class="me-2">Rating: {{product.rating}}</span>
+            {% if product.category %}
+            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                <p class="small">{{product.category.friendly_name}}</p>
+            </a>
+            {% endif %}
             {% endif %}
         </div> 
     </div>

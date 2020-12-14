@@ -33,7 +33,7 @@
 .expand-search-box {
     width:70vw;
 }
-/*--------------------------------------------- PRODUCTS----------*/
+/*--------------------------------------------- PRODUCT----------*/
 .center {
   position: absolute;
   top: 50%;
@@ -45,12 +45,24 @@
   height:auto;
   object-fit:cover;
 }
-
+/*--------------------------------------------- BANER BENEATH MAIN NAV----------*/
 .hr-class {
     height:2px !important;
     border-width:0 !important;
     color:#D40000 !important;
     background-color:#D40000 !important;
+}
+/*--------------------------------------------- CATEGORIES ----------*/
+a .badge.category:hover {
+    background: purple!important;
+    color:white!important;
+}
+
+/*--------------------------------------------- SELECTOR ----------*/
+#sort-selector {
+    height:30px;
+    background-color:#f7f7f7;
+    border:1px solid rgba(110, 106, 106, 0.767)!important;
 }
 @media (min-width: 992px) {
     .hide-ul {
