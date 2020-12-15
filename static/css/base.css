@@ -58,11 +58,15 @@ a .badge.category:hover {
     color:white!important;
 }
 
-/*--------------------------------------------- SELECTOR ----------*/
+/*--------------------------------------------- SELECTOR FOR SORTING THE PRODUCTS ----------*/
 #sort-selector {
     height:30px;
     background-color:#f7f7f7;
     border:1px solid rgba(110, 106, 106, 0.767)!important;
+}
+.btn-style {
+    background-color:#6452D2;
+    color:#fff;
 }
 @media (min-width: 992px) {
     .hide-ul {
@@ -71,5 +75,10 @@ a .badge.category:hover {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+@media (max-width: 768px) {
+    .inputs {
+      margin:auto!important;
     }
 }

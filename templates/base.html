@@ -80,11 +80,11 @@
                     </li>
                     <!--Here will be displayed the shopping cart amount-->
                     <li class="list-inline-item align-middle">
-                        <a class="text-dark fs-3 {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}" href="">
+                        <a class="text-dark fs-3 {% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %}" href="{% url 'view_cart' %}">
                             <i class="fas fa-shopping-cart"></i><span> </span>
                             <span class="list-inline-item align-midle">
                                {% if grand_total %}
-                                ${{ grand_total|floatformat:2 }}
+                                £{{ grand_total|floatformat:2 }}
                                 {% else %}
                                 £0.00
                                 {% endif %}
