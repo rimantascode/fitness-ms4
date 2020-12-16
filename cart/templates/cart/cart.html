@@ -4,6 +4,7 @@
 
 <div class="container-fluid">
     <div class="row">
+        {% if cart_items %}
         <div class="col-12">
             <table class="table table-borderless">
                 <thead>
@@ -33,7 +34,30 @@
                         {% endif %}
                         <td>{{item.product.name}}</td>
                         <td>{{item.product.price}}</td>
-                        <td>{{item.quantity}}</td>
+                        <td>
+                            <form  class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+                                {% csrf_token %}
+                            <div class="input-group">
+                                <button class="decrement-qty btn btn-black rounded-0" data-item_id="{{ item.item_id }}"
+                                    id="decrement-qty_{{ item.item_id }}">
+                                    <span class="icon">
+                                        <i class=" fs-4 fas fa-angle-left"></i>
+                                    </span>
+                                </button>
+                                <input class="form-control qty_input input-lenght" type="number" name="quantity" value="{{item.quantity}}" min="1" max="99"
+                                    data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id  }}">
+                                <button class="increment-qty btn btn-black rounded-0" data-item_id="{{ item.item_id }}"
+                                    id="increment-qty_{{ item.item_id }}">
+                                    <span class="icon">
+                                        <i class="fs-4 fas fa-angle-right"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            </form>
+                            <a class=" update-quantity text-warning float-start ms-3 text-decoration-none"><small>Update</small></a>
+                            <a class="remove-items text-danger float-end me-3 text-decoration-none"
+                                id="remove_{{ item.item_id}}"><small>Remove</small></a>
+                        </td>
                         <td>{{item.product.price}}</td>
                     </tr>
                     {% endfor %}
@@ -53,6 +77,9 @@
             </div> 
         </div>
     </div>
+    {% else %}
+        <h4 class="m-5">Your cart is Empty</h4>
+    {% endif %}
 </div>
 
 {%endblock%}
@@ -60,4 +87,29 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_script.html' %}
+
+
+<!-- This code was copied from code instite e-commerce project -->
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-quantity').click(function() {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-items').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/cart/remove/${itemId}/`;
+        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+    
+</script>
 {% endblock %}

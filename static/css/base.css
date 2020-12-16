@@ -68,6 +68,13 @@ a .badge.category:hover {
     background-color:#6452D2;
     color:#fff;
 }
+
+/*--------------------------------------------- UPDATE AND REMOVE BAG ITEMS ----------*/
+.update-quantity, .remove-items {
+    cursor:pointer;
+}
+
+
 @media (min-width: 992px) {
     .hide-ul {
       display:none;
