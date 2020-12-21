@@ -31,7 +31,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 	{% endblock %}
 
-	{% block extra_js %}
+    {% block extra_js %}
+    <script src="https://js.stripe.com/v3/"></script>
 	{% endblock %}
 
 	<title>Fitness World {% block extra_title %}{% endblock %}</title>
@@ -125,7 +126,7 @@
 	{% block content %}
 	{% endblock %}
 
-	{% block postloadjs %}
+    {% block postloadjs %}
 	{% endblock %}
 
 
