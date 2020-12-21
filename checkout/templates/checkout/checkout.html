@@ -22,7 +22,7 @@
     </div>    
         <div class="row">
         <div class="col-lg-8 col-xxl-7  mx-auto" >
-        <form action="{% url 'checkout' %}" method="POST" class="form" id="payment-form">
+        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
             {% bootstrap_form order_form %}
                     <fieldset class="px-3">
@@ -59,6 +59,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                     {% endbuttons %}
                 </form>
+                {{order}}
             </div>
         
         </div>
