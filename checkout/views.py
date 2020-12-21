@@ -58,6 +58,7 @@ def checkout(request):
             print(messages.error(request, 'There was an error with your form. \
                 Please double check your information.'))
     else:
+        print("this is else ")
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(

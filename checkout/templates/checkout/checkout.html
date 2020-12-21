@@ -21,14 +21,14 @@
         <p>Please fill out the required information</p>
     </div>    
         <div class="row">
-        <div class="col-lg-8 col-xxl-7  mx-auto" >
-        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
-            {% csrf_token %}
-            {% bootstrap_form order_form %}
-                    <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+            <div class="col-lg-8 col-xxl-7  mx-auto" >
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                {% bootstrap_form order_form %}
+                    <fieldset class="mt-3">
+                        <legend class="fieldset-label small text-black px-2 w-auto"><small class="text-info">Payment</small></legend>
                         <!-- A Stripe card element will go here -->
-                        <div class="mb-3" id="card-element"></div>
+                        <div class="m-0" id="card-element"></div>
                         <!-- Used to display form errors -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
@@ -36,13 +36,13 @@
                     </fieldset>
     
                     <div class="submit-button text-right mt-5 mb-2">
-                        <a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded-0">
+                        <a href="{% url 'view_cart' %}" class=" btn btn-style text-uppercase me-2">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="font-weight-bold">Adjust Cart</span>
                         </a>
-                        <button id="submit-button" class="btn btn-black rounded-0">
+                        <button id="submit-button" class="btn btn-style text-uppercase me-2">
                             <span class="font-weight-bold">Complete Order</span>
                             <span class="icon">
                                 <i class="fas fa-lock"></i>
@@ -55,15 +55,17 @@
                             <span>Your card will be charged<strong>${{ grand_total|floatformat:2 }}</strong></span>
                         </p>
                     </div>
-                    {% buttons %}
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    {% endbuttons %}
                 </form>
-                {{order}}
-            </div>
-        
+            </div>   
         </div>
-        </div>
+</div>
+<div id="loading-overlay">
+    <h1 class="text-light logo-font loading-spinner">
+        <span class="icon">
+            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
+        </span>
+    </h1>
+</div>
 
 {% endblock %}
 

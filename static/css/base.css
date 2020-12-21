@@ -75,9 +75,6 @@ a .badge.category:hover {
 }
 
 /*-------------------------------------------- CHECKOUT FORM ----------*/
-#payment-form .form-group{
-    margin-top:15px;
-}
 
 @media (min-width: 992px) {
     .hide-ul {
