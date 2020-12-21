@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+    'crispy_forms',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -58,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+#CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 ROOT_URLCONF = 'fitness_ms4.urls'
 
@@ -75,8 +79,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cart.contexts.cart_contents'
+                'django.template.context_processors.media',
+                'cart.contexts.cart_contents',
             ],
+            'builtins':[
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+
+            ]
         },
     },
 ]

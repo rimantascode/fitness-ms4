@@ -73,7 +73,7 @@
             </table>
             <div class="d-grid gap-2 d-md-block float-lg-end float-md-end float-xxl-end me-lg-5 me-md-5">      
                 <a href="{% url 'products' %}" class="btn btn-style text-uppercase mt-2" type="button">Keep Shopping</a>
-                <button class="btn btn-style text-uppercase mt-2" type="submit">Secure Checkout</button>
+                <a href="{% url 'checkout' %}" class="btn btn-style text-uppercase mt-2" type="submit">Secure Checkout</a>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div> 
         </div>
