@@ -74,7 +74,18 @@ a .badge.category:hover {
     cursor:pointer;
 }
 
-/*-------------------------------------------- CHECKOUT FORM ----------*/
+/*-------------------------------------------- LOGIN ----------*/
+#div_id_password{
+    margin-top:10px
+}
+/* this was copied from project "*/
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input {
+    margin-top:15px;
+}
 
 @media (min-width: 992px) {
     .hide-ul {

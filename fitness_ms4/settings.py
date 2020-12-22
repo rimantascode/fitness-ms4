@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'checkout',
     'crispy_forms',
     'bootstrap5',
-    'profiles'
+    'profiles',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ROOT_URLCONF = 'fitness_ms4.urls'
 
