@@ -12,20 +12,12 @@
     <div class="row">
         <div class="col-12 text-center p-0 m-0">
             <hr class="hr-class my-1">
-            <h3 class="logo-font"> My Profile</h3>
+            <h3 class="logo-font"> Updated</h3>
             <hr class="hr-class my-1">
         </div>
     </div>
-    <div class="col-12 col-lg-6">
-        <form action="{% url 'profile' %}" method="POST" class="profile-form m-5">
-            <p>Default delivery information</p>
-            {% csrf_token %}
-           {{ form | crispy }}
-           <button class="btn btn-style mt-3">Update{{message}} Profile</button>
-        </form>
-    </div>
-    <div class="col-12 col-lg-6">
-        
+    <div class="col-12">
+        <h3 class="mt-5 text-center">Thank your Profile has been updated</h3>
     </div>
 </div>
 {{ message }}
