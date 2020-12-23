@@ -1,12 +1,16 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+
+from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from checkout.models import Order
+
 def updated(request):
 
     return render(request, 'profiles/updated_profile.html')
+
 
 def profile(request):
     """ Display the user's profile. """
@@ -16,7 +20,7 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
-            return redirect(reverse('updated'))
+            messages.success(request, 'Profile updated successfully')
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
@@ -25,7 +29,7 @@ def profile(request):
     context = {
         'form': form,
         'orders': orders,
-        'on_profile_page': True,
+        'on_profile_page': True
     }
 
     return render(request, template, context)
