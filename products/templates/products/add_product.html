@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% load cart_tools %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %} ">
+{% endblock %}
+
+{% block content %}
+<!-- Products page -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center p-0 m-0">
+            <hr class="hr-class my-1">
+            <h3 class="logo-font">Product Management</h3>
+            <hr class="hr-class my-1">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 col-xxl-7  mx-auto">
+           <form method="POST" action="{% url 'add_product'%}" enctype="multipart/form-data">
+                {{ crfs_token }}
+                <h4 class="my-4" >Please fill out the required information</h4>
+               {% bootstrap_form form %}
+                <button class="btn btn-style mt-3" type="submit">ADD PRODUCT</button>
+                <button class="btn btn-style mt-3" type="submit">CANCEL</button>
+           </form>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %} "></script>
+{% endblock %}
