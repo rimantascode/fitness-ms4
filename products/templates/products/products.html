@@ -57,8 +57,8 @@
                     <img src="{{product.image.url}}" class="card-img-top img-fluid"  alt="{{product.name}}">
                 </a>
                 {% else %}
-                <a href="{%url 'product_detail product.id '%}">
-                    <img src="{{MEDIA_URL}}}no-image.jpg" class="card-img-top img-fluid" alt="{{product.name}}">
+                <a href="{%url 'product_detail' product.id %}">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{product.name}}">
                 </a>
                 {%endif%}
                     <div class="card-body">
