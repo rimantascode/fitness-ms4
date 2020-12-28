@@ -211,3 +211,5 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'fitness.world@gmails.com'
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
