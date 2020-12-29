@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    {% if subscription.status == "active" %}
+    <div class="row">
+        {% for product in exercises %}
+        <div class="col-sm-12 col-md-6 col-lg-3 p-0 m-0 order-md-first">
+            <div class="card">
+                {% if product.hero_image %}
+                <a href="">
+                    <img src="{{product.hero_image }}" class="card-img-top img-fluid" alt="{{product.name}}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{product.name}}">
+                </a>
+                {%endif%}
+                <div class="card-body">
+                    <p class="card-text text-center fs-5"> <strong>{{product.name}}</strong></p>
+                    <p class="text-center">
+                        <span class="card-text text-center ">Rating: {{product.rating}}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:1 %}
+        <div class="col-12 d-sm-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:4 %}
+        <div class="col-12 d-none d-xl-block mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+ </div>
+{% endif %}
+      
+  
+{% endblock %}
+{% block postloadjs %}
+
+{% endblock %}

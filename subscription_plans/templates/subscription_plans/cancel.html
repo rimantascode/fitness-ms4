@@ -13,16 +13,12 @@
     <div class="row">
         <div class="col-md-6 m-5">
             <div class="float-end m-5">
-            <p class="mx-auto fs-5"> Thank you now You can access EXERCISES & NUTRITION PLANS.Please see your subscription</p>
-            <a  class="btn btn-style" href="{% url 'subscription_plans' %}">See Subscriptions</a>
+                <p class="mx-auto fs-5"> Sorry!!! Somethink went wrong. Please try later.
+                    subscription</p>
+                <a class="btn btn-style" href="{% url 'subscription_plans' %}" id="submitBtn" >Buy Subscription</a>
             </div>
         </div>
-    </div>
-    <div class="row">
     </div>
 </div>
 {% endblock %}
 
-{% block postloadjs %}
-
-{% endblock %}

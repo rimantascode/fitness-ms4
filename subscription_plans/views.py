@@ -1,16 +1,38 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404, redirect, reverse
 from django.conf import settings
 from django.http.response import JsonResponse
 from django.contrib.auth.decorators import login_required
-from subscription_plans.models import Subscription
+from subscription_plans.models import Subscriptions, exercisesPlan
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.contrib import messages
 
+from dateutil.relativedelta import relativedelta
+
+from datetime import date
 import stripe
 
 
+@login_required
 def subscription_plans(request):
+    try:
+        stripe_customer = Subscriptions.objects.get(user=request.user)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        subscription = stripe.Subscription.retrieve(
+            stripe_customer.SubscriptionIdstripe)
+        product = stripe.Product.retrieve(subscription.plan.product)
+        expire_date=stripe_customer.expire_date
+
+        context = {
+                'subscription': subscription,
+                'product': product,
+                'expire_date': expire_date
+        }
+       
+        return render(request, 'subscription_plans/subscription_plans.html', context)
+        
+    except Subscriptions.DoesNotExist:
+        return render(request, 'subscription_plans/subscription_plans.html')
 
     return render(request, 'subscription_plans/subscription_plans.html')
 
@@ -26,8 +48,10 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = 'https://8000-d3601d4a-6da3-40aa-a7a9-e4fea7cafd25.ws-eu03.gitpod.io/subscription/'
+        domain_url = 'https://8000-cf1c1015-c4c6-4230-b74f-e0e27e8b47d0.ws-eu03.gitpod.io/subscription/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
+        STRIPE_PRICE_ID = settings.STRIPE_PRICE_ID
+        print("this is a price id" + STRIPE_PRICE_ID)
         try:
             checkout_session = stripe.checkout.Session.create(
                 client_reference_id=request.user.id if request.user.is_authenticated else None,
@@ -38,7 +62,7 @@ def create_checkout_session(request):
                 mode='subscription',
                 line_items=[
                     {
-                        'price': settings.STRIPE_PRICE_ID,
+                        'price': "price_1I3S3cA3o7Dh28QGEfwpxFAG",
                         'quantity': 1,
                     }
                 ]
@@ -60,8 +84,8 @@ def declined(request):
 
 @csrf_exempt
 def stripe_webhook(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    endpoint_secret = settings.STRIPE_SUB_WEBHOOK
+    stripe.api_key = "sk_test_51I0jWJA3o7Dh28QGeT2rf9NxjKs4X9EKzz3INV18FeLxItUE0mxGTn1hp7QSzQwVPOtyYCiCK2UlXeS5WhryBhWr00h7PfqkjL"
+    endpoint_secret = "whsec_OIKqWRCip8K2Jv3arFHUc6wLauxIuKyH"
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
@@ -80,22 +104,52 @@ def stripe_webhook(request):
     # Handle the checkout.session.completed event
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
-        print(session)
+        session2 = event
+        print(session2)
 
         # Fetch all the required data from session
         client_reference_id = session.get('client_reference_id')
         stripe_customer_id = session.get('customer')
         stripe_subscription_id = session.get('subscription')
-    
-
+        stripe_subscription_created = session2.get('created')
+        theDateOfSubscription = date.fromtimestamp(stripe_subscription_created)
+        expire_date = theDateOfSubscription + relativedelta(months=+3)
+        
         # Get the user and create a new StripeCustomer
         user = User.objects.get(id=client_reference_id)
-        print(user.username)
-        Subscription.objects.create(
+        Subscriptions.objects.create(
             user=user,
             CustomerIdstripe=stripe_customer_id,
             SubscriptionIdstripe=stripe_subscription_id,
-        )
+            subscription_date = theDateOfSubscription,
+            expire_date = expire_date)
+        
         print(user.username + ' just subscribed.')
-
+       
     return HttpResponse(status=200)
+
+@login_required
+def all_exercises_plans(request):
+    try:
+        exercises = exercisesPlan.objects.all()
+        stripe_customer = Subscriptions.objects.get(user=request.user)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        subscription = stripe.Subscription.retrieve(
+            stripe_customer.SubscriptionIdstripe)
+        product = stripe.Product.retrieve(subscription.plan.product)
+        expire_date = stripe_customer.expire_date
+
+        context = {
+            'subscription': subscription,
+            'product': product,
+            'expire_date': expire_date,
+            'exercises':  exercises
+        }
+
+        return render(request, 'subscription_plans/exercises_plans.html', context)
+
+    except Subscriptions.DoesNotExist:
+        return redirect(reverse('subscription_plans'))
+
+
+    return render (request, 'subscription_plans/subscription_plans.html')
