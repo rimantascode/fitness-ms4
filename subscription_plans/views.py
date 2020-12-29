@@ -48,7 +48,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = 'https://8000-cf1c1015-c4c6-4230-b74f-e0e27e8b47d0.ws-eu03.gitpod.io/subscription/'
+        domain_url = settings.domain_url
         stripe.api_key = settings.STRIPE_SECRET_KEY
         STRIPE_PRICE_ID = settings.STRIPE_PRICE_ID
         print("this is a price id" + STRIPE_PRICE_ID)
@@ -84,7 +84,7 @@ def declined(request):
 
 @csrf_exempt
 def stripe_webhook(request):
-    stripe.api_key = "sk_test_51I0jWJA3o7Dh28QGeT2rf9NxjKs4X9EKzz3INV18FeLxItUE0mxGTn1hp7QSzQwVPOtyYCiCK2UlXeS5WhryBhWr00h7PfqkjL"
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     endpoint_secret = "whsec_OIKqWRCip8K2Jv3arFHUc6wLauxIuKyH"
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']

@@ -224,6 +224,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
+    domain_url = os.getenv('domain_url')
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
