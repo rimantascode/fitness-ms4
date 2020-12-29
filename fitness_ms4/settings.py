@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'profiles',
     'storages',
+    'subscription_plans',
 ]
 
 MIDDLEWARE = [
@@ -204,11 +205,17 @@ if 'USE_AWS' in os.environ:
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 
+STRIPE_PRICE_ID = os.getenv('STRIPE_PRICE_ID', '')
+STRIPE_SUB_WEBHOOK = os.getenv('STRIPE_SUB_WEBHOOK', '')
+
+
+
 
 STRIPE_CURRENCY = 'GBP'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
 DEFAULT_FROM_EMAIL = 'fitness.world@gmails.com'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
