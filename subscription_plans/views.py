@@ -48,7 +48,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = settings.domain_url
+        domain_url = "https://8000-cf1c1015-c4c6-4230-b74f-e0e27e8b47d0.ws-eu03.gitpod.io/subscription/"
         stripe.api_key = settings.STRIPE_SECRET_KEY
         STRIPE_PRICE_ID = settings.STRIPE_PRICE_ID
         print("this is a price id" + STRIPE_PRICE_ID)
