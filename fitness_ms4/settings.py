@@ -216,7 +216,6 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
-DEFAULT_FROM_EMAIL = 'fitness.world@gmails.com'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
  
@@ -224,7 +223,6 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'boutiqueado@example.com'
-    domain_url = os.getenv('domain_url')
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
