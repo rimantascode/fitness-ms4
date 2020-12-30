@@ -1,11 +1,11 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, redirect, reverse
-from django.conf import settings
 from django.http.response import JsonResponse
 from django.contrib.auth.decorators import login_required
 from subscription_plans.models import Subscriptions, exercisesPlan
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.conf import settings
 
 from dateutil.relativedelta import relativedelta
 
@@ -48,10 +48,9 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = "https://fiteness-world-ms4.herokuapp.com/subscription/"
+        domain_url = "https://8000-e4a72be1-2c6a-43e2-8be8-58576adc7bd6.ws-eu03.gitpod.io/subscription/"
         stripe.api_key = settings.STRIPE_SECRET_KEY
         STRIPE_PRICE_ID = settings.STRIPE_PRICE_ID
-        print("this is a price id" + STRIPE_PRICE_ID)
         try:
             checkout_session = stripe.checkout.Session.create(
                 client_reference_id=request.user.id if request.user.is_authenticated else None,
@@ -69,12 +68,37 @@ def create_checkout_session(request):
             )
             return JsonResponse({'sessionId': checkout_session['id']})
         except Exception as e:
+            messages.error(request, f'{str(e)}')
             return JsonResponse({'error': str(e)})
+            
 
 
 @login_required
 def success(request):
-    return render(request, 'subscription_plans/success.html')
+    try:
+        stripe_customer = Subscriptions.objects.get(user=request.user)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        subscription = stripe.Subscription.retrieve(
+            stripe_customer.SubscriptionIdstripe)
+        product = stripe.Product.retrieve(subscription.plan.product)
+        expire_date = stripe_customer.expire_date
+
+        context = {
+            'subscription': subscription,
+            'product': product,
+            'expire_date': expire_date
+        }
+        messages.success(
+            request, "you have successfully subscribed, and now you granted to access the exercises and nutrition plans")
+        return redirect(reverse('subscription_plans'))
+
+    except Subscriptions.DoesNotExist:
+        messages.error(
+            request, "sorry something went wrong!!!!")
+        return redirect(reverse('subscription_plans'))
+
+    return redirect(reverse('subscription_plans'))
+   
 
 
 @login_required
@@ -85,7 +109,9 @@ def declined(request):
 @csrf_exempt
 def stripe_webhook(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
+    print("ENDPOINT WEBHOOK STRIPE SECRET KEY " + stripe.api_key)
     endpoint_secret = settings.STRIPE_SUB_WEBHOOK
+    print("ENDPOINT SUB WEBHOOK " + endpoint_secret)
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
@@ -97,6 +123,7 @@ def stripe_webhook(request):
     except ValueError as e:
         # Invalid payload
         return HttpResponse(status=400)
+        
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
         return HttpResponse(status=400)
@@ -124,9 +151,9 @@ def stripe_webhook(request):
             subscription_date = theDateOfSubscription,
             expire_date = expire_date)
         
-        print(user.username + ' just subscribed.')
+        messages.success(request, "You have successuly subscribed")
        
-    return HttpResponse(status=200)
+        return HttpResponse(status=200)
 
 @login_required
 def all_exercises_plans(request):
@@ -134,6 +161,7 @@ def all_exercises_plans(request):
         exercises = exercisesPlan.objects.all()
         stripe_customer = Subscriptions.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
+        print(" stripe secret key" + stripe.api_key)
         subscription = stripe.Subscription.retrieve(
             stripe_customer.SubscriptionIdstripe)
         product = stripe.Product.retrieve(subscription.plan.product)
