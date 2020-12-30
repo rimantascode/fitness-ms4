@@ -153,7 +153,7 @@ def stripe_webhook(request):
         
         messages.success(request, "You have successuly subscribed")
        
-        return HttpResponse(status=200)
+    return HttpResponse(status=200)
 
 @login_required
 def all_exercises_plans(request):
