@@ -109,9 +109,7 @@ def declined(request):
 @csrf_exempt
 def stripe_webhook(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
-    print("ENDPOINT WEBHOOK STRIPE SECRET KEY " + stripe.api_key)
     endpoint_secret = settings.STRIPE_SUB_WEBHOOK
-    print("ENDPOINT SUB WEBHOOK " + endpoint_secret)
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
     event = None
@@ -178,6 +176,5 @@ def all_exercises_plans(request):
 
     except Subscriptions.DoesNotExist:
         return redirect(reverse('subscription_plans'))
-
 
     return render (request, 'subscription_plans/subscription_plans.html')
