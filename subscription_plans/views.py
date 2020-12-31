@@ -49,7 +49,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = "https://fiteness-world-ms4.herokuapp.com/subscription/"
+        domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
         STRIPE_PRICE_ID = settings.STRIPE_PRICE_ID
         try:
@@ -180,4 +180,4 @@ def all_exercises_plans(request):
     except Subscriptions.DoesNotExist:
         return redirect(reverse('subscription_plans'))
 
-    return render (request, 'subscription_plans/subscription_plans.html')
+    return render(request, 'subscription_plans/subscription_plans.html')
