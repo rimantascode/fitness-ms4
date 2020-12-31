@@ -49,7 +49,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = "https://8000-e4a72be1-2c6a-43e2-8be8-58576adc7bd6.ws-eu03.gitpod.io/subscription/"
+        domain_url = "https://fiteness-world-ms4.herokuapp.com/subscription/"
         stripe.api_key = settings.STRIPE_SECRET_KEY
         STRIPE_PRICE_ID = settings.STRIPE_PRICE_ID
         try:
