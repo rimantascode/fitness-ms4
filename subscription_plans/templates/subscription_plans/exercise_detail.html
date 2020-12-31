@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    {% if subscription.status == "active" %}
+        {% for exercise in exercises %}
+        <div class="row">
+            <div>{{exercse.name}}</div>
+        </div>
+        {%endfor%}
+    {% endif %}
+      
+{% endblock %}
+{% block postloadjs %}
+{% endblock %}
