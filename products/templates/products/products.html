@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Products page -->
-<div class="container-fluid">
+<div class="container-fluid m-0 p-0">
     <div class="row">
         <div class="col-12 text-center p-0 m-0">
             <hr class="hr-class my-1">
@@ -44,69 +44,64 @@
                 </select>
             </div>
         </div>
-    <div class="row">
-        {% for product in products %}
-        <div class="col-sm-12 col-md-6 col-lg-3 p-0 m-0 order-md-first">
-            <div class="card">
+    <div class="row m-0 p-0 g-0 mb-1">
+        {% for product in products %}        
+        <div class="col-sm-12 col-md-6 col-lg-3 p-0 m-0 card-group">
+            <div class="card h-100">
                 {% if product.image_url %}  
                 <a href="{%url 'product_detail' product.id %}">
-                    <img src="{{product.image_url}}" class="card-img-top img-fluid" alt="{{product.name}}">
+                    <img  class="card-img-top img-fluid h-100" src="{{product.image_url}}" alt="{{product.name}}">
                 </a>
                 {% elif product.image %}
                 <a href="{%url 'product_detail' product.id %}">
-                    <img src="{{product.image.url}}" class="card-img-top img-fluid"  alt="{{product.name}}">
+                    <img class="card-img-top img-fluid h-100" src="{{product.image.url}}" alt="{{product.name}}">
                 </a>
                 {% else %}
                 <a href="{%url 'product_detail' product.id %}">
-                    <img src="{{ MEDIA_URL }}noimage.png" class="card-img-top img-fluid" alt="{{product.name}}">
+                    <img  class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{product.name}}">
                 </a>
                 {%endif%}
                     <div class="card-body">
                         <p class="card-text text-center fs-5"> <strong>{{product.name}}</strong></p>
-                        <p class="text-center">
-                        <span class="card-text m-2"> £{{product.price}}</span>
-                        <span class="card-text text-center ">Rating: {{product.rating}}</span>
-                        {% if product.category %}     
-                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                <p class="small text-center">{{product.category.friendly_name}}</p>
-                            </a>
-                            <div class="d-flex justify-content-center">
-                            <a class="btn btn-sm btn-warning m-1" href="{% url 'edit_product' product.id %}">EDIT </a>
-                            <a class="btn btn-sm btn-outline-danger m-1" href="{% url 'delete' product.id %}">DELETE</a>
-                            </div>
-                        {% endif %}
-                        </p>
-                    </div>  
+                </div>
+                <div class="text-center card-footer-light mb-2">
+                    <span class="card-text m-2"> £{{product.price}}</span>
+                    <span class="card-text text-center ">Rating: {{product.rating}}</span>
+                    {% if product.category %}
+                    <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                        <p class="small text-center">{{product.category.friendly_name}}</p>
+                    </a>
+                    {% endif %}  
+                <div class="d-flex justify-content-center">
+                    <a class="btn btn-sm btn-warning m-1" href="{% url 'edit_product' product.id %}">EDIT </a>
+                    <a class="btn btn-sm btn-outline-danger m-1" href="{% url 'delete' product.id %}">DELETE</a>
+                </div>
+                </div>
             </div>
         </div>
-                {% if forloop.counter|divisibleby:1 %}
-                    <div class="col-12 d-sm-none mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:2 %}
-                    <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                    <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:4 %}
-                    <div class="col-12 d-none d-xl-block mb-5">
-                        <hr>
-                    </div>
-                {% endif %}
-                {% endfor %}
+        {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-sm-none mb-5">
+                <hr>
+            </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                <hr>
+            </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                <hr>
+            </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-5">
+                <hr>
+            </div>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
-                <div class="btt-button shadow-sm rounded-0 border border-black">
-                    <a class="btt-link d-flex h-100">
-                        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
-                    </a>
-                </div>
 {% endblock %}
 
 {% block postloadjs %}
