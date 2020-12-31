@@ -130,9 +130,31 @@ def stripe_webhook(request):
 
     # Handle the checkout.session.completed event
     if event['type'] == 'checkout.session.completed':
-        print("yes it works")
+        session = event['data']['object']
+        session2 = event
+        print(session2)
+
+        # Fetch all the required data from session
+        client_reference_id = session.get('client_reference_id')
+        stripe_customer_id = session.get('customer')
+        stripe_subscription_id = session.get('subscription')
+        stripe_subscription_created = session2.get('created')
+        theDateOfSubscription = date.fromtimestamp(stripe_subscription_created)
+        expire_date = theDateOfSubscription + relativedelta(months=+3)
+        
+        # Get the user and create a new StripeCustomer
+        user = User.objects.get(id=client_reference_id)
+        Subscriptions.objects.create(
+            user=user,
+            CustomerIdstripe=stripe_customer_id,
+            SubscriptionIdstripe=stripe_subscription_id,
+            subscription_date = theDateOfSubscription,
+            expire_date = expire_date)
+        
+        messages.success(request, "You have successuly subscribed")
        
     return HttpResponse(status=200)
+
 
 @login_required
 def all_exercises_plans(request):
