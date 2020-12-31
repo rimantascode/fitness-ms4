@@ -13,6 +13,24 @@ from dateutil.relativedelta import relativedelta
 from datetime import date
 import stripe
 
+def check_subscription(request):
+    try:
+        stripe_customer = Subscriptions.objects.get(user=request.user)
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        subscription = stripe.Subscription.retrieve(
+            stripe_customer.SubscriptionIdstripe)
+        product = stripe.Product.retrieve(subscription.plan.product)
+        expire_date = stripe_customer.expire_date
+
+        if subscription.status == "active":
+            a = "handshake"
+            return a
+        else:
+            a = "no"
+      
+    except Subscriptions.DoesNotExist:
+       messages.error(request, "Sorry, only subscribed users can access this service")
+
 
 @login_required
 def subscription_plans(request):
@@ -181,3 +199,12 @@ def all_exercises_plans(request):
         return redirect(reverse('subscription_plans'))
 
     return render(request, 'subscription_plans/subscription_plans.html')
+
+def exercise_details(request,  exercise_id):
+    exercise_details = get_object_or_404(exercisesPlan, pk=exercise_id)
+    
+    context={
+        'exercise_details':exercise_details,
+        'subscription':  check_subscription(request)
+    }
+    return render(request, "subscription_plans/exercise_details.html", context)
