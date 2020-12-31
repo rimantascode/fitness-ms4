@@ -5,7 +5,7 @@ from dateutil.relativedelta import relativedelta
 from django.db.models.signals import post_save
 
 class Subscriptions(models.Model):
-    user = models.OneToOneField(to=User, on_delete=models.CASCADE)
+    user = models.OneToOneField(to=User, null=True, on_delete=models.CASCADE)
     CustomerIdstripe = models.CharField(max_length=255)
     SubscriptionIdstripe = models.CharField(max_length=255)
     expire_date = models.DateTimeField(auto_now_add=False, null=True, blank=True)
@@ -17,9 +17,8 @@ class Subscriptions(models.Model):
 
 class exercisesPlan(models.Model):
     has_access = models.OneToOneField(
-        Subscriptions,
-        on_delete=models.CASCADE,
-        primary_key=True,
+        Subscriptions, null=True, blank=True,
+        on_delete=models.SET_NULL,
     )
     how_it_works = models.TextField(max_length=2000, blank=True)
     hero_image = models.URLField(
