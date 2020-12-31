@@ -233,4 +233,9 @@ else:
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
     #use domain
+if 'DEVELOPMENT' in os.environ:
+    DOMAIN_URL ="https://8000-b167fa7c-4629-4e5e-b89a-a7362a4a0462.ws-eu03.gitpod.io/subscription/"
+else:
     DOMAIN_URL = os.getenv('DOMAIN_URL','')
+
+
