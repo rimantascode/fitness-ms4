@@ -16,10 +16,6 @@ class Subscriptions(models.Model):
         return self.user.username
 
 class exercisesPlan(models.Model):
-    has_access = models.OneToOneField(
-        Subscriptions, null=True, blank=True,
-        on_delete=models.SET_NULL,
-    )
     how_it_works = models.TextField(max_length=2000, blank=True)
     hero_image = models.URLField(
         max_length=1400, null=True, blank=True)
