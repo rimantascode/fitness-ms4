@@ -1,3 +1,4 @@
+
 /*--------------------------------------------- HEADER----------*/
 .nav-bg {
     background:#000F9A !important;
@@ -137,5 +138,11 @@ textarea, label {
 @media (max-width: 768px) {
     .inputs {
       margin:auto!important;
+    }
+}
+
+@media (max-width:360px){
+    .table-for-sm {
+
     }
 }
