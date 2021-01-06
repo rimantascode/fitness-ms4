@@ -121,17 +121,21 @@ WSGI_APPLICATION = 'fitness_ms4.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        }
-else:   
-    DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': BASE_DIR / 'db.sqlite3',
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#         }
+# else:   
+#     DATABASES = {
+#             'default': {
+#                 'ENGINE': 'django.db.backends.sqlite3',
+#                 'NAME': BASE_DIR / 'db.sqlite3',
+#             }
+#         }
+
+DATABASES = {
+    'default': dj_database_url.parse("postgres://frfabnphbblzqf:1471fc5664827acfab362ca0d4aec67df59beb9e3fac91bcbf55b066126486df@ec2-34-246-141-162.eu-west-1.compute.amazonaws.com:5432/d3600ktik47i4c")
             }
-        }
 
 
 
