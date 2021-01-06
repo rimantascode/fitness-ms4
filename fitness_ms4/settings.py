@@ -133,9 +133,7 @@ WSGI_APPLICATION = 'fitness_ms4.wsgi.application'
 #             }
 #         }
 
-DATABASES = {
-    'default': dj_database_url.parse("postgres://frfabnphbblzqf:1471fc5664827acfab362ca0d4aec67df59beb9e3fac91bcbf55b066126486df@ec2-34-246-141-162.eu-west-1.compute.amazonaws.com:5432/d3600ktik47i4c")
-            }
+
 
 
 
