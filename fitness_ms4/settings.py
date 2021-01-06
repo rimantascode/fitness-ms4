@@ -121,23 +121,16 @@ WSGI_APPLICATION = 'fitness_ms4.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
-# if 'DATABASE_URL' in os.environ:
-#     DATABASES = {
-#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#         }
-# else:   
-#     DATABASES = {
-#             'default': {
-#                 'ENGINE': 'django.db.backends.sqlite3',
-#                 'NAME': BASE_DIR / 'db.sqlite3',
-#             }
-#         }
-DATABASES = {
-    'default': dj_database_url.parse("postgres://njiunmylpzsrei:3bdae1a064913a923522b3951c367bd9a60edace441e2dc48e6d97ccc2972380@ec2-46-137-124-19.eu-west-1.compute.amazonaws.com:5432/d5phbi9746j2og")
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+else:   
+    DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
             }
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
