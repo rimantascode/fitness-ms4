@@ -23,21 +23,21 @@ $("#submit-button").click(function (e) {
 
     // take and proccess the value of street 1
     var address_street_1 = $("[name='street_address1']").val();
-    var adress_street1RGEX = /[^0-9a-zA-Z]/g;
+    var adress_street1RGEX = /[^0-9a-zA-Z ]/g;
     var check_address_street_1 = adress_street1RGEX.test(address_street_1);
     var result_phoneNamber = address_street_1.match(adress_street1RGEX, "");
     var address_street_1_place_holder = $("[name='street_address1']").attr('placeholder');
 
     // take and proccess the value of street 2
     var address_street_2 = $("[name='street_address2']").val();
-    var adress_street2RGEX = /[^0-9a-zA-Z]/g;
+    var adress_street2RGEX = /[^0-9a-zA-Z ]/g;
     var check_address_street_2 = adress_street2RGEX.test(address_street_2);
     var result_address_street_2 = address_street_2.match(adress_street2RGEX, "");
     var address_street_2_place_holder = $("[name='street_address2']").attr('placeholder');
 
     //take and proccess the value of City and Town
     var town_or_city = $("[name='town_or_city']").val();
-    var town_or_cityRGEX = /[^a-zA-Z]/g;
+    var town_or_cityRGEX = /[^a-zA-Z ]/g;
     var check_town_or_city = town_or_cityRGEX.test(town_or_city);
     var result_town_or_city = town_or_city.match(town_or_cityRGEX, "");
     var town_or_city_place_holder = $("[name='town_or_city']").attr('placeholder');
