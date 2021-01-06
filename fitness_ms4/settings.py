@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = [
-    'https://8000-a665f6e5-1271-47dc-ae67-a324dce68921.ws-eu03.gitpod.io/','localhost']
+    'https://fiteness-world-ms4.herokuapp.com/','localhost']
 
 
 # Application definition
