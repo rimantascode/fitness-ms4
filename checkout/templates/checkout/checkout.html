@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-<!-- Products page -->
+<!-- checkout page -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 text-center p-0 m-0">
@@ -35,18 +35,20 @@
                         <!-- Pass the client secret to the view so we can get the payment intent id -->
                         <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     </fieldset>
+                    <!-- Saves the information to the user profile, if the user is logged in-->
                     <div class="form-check form-check-inline float-right mr-0">
 							{% if user.is_authenticated %}
 								<label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
                                 <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-							{% else %}
+                            {% else %}
+                            <!-- if not looged in will be sent to the login / sign up page -->
 								<label class="form-check-label" for="id-save-info">
                                     <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
                                     <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
                                 </label>
 							{% endif %}
-						</div>
-    
+                        </div>
+                        <!-- the user can adjust the content of the cart and or complete the payment -->
                     <div class="submit-button text-right mt-5 mb-2">
                         <a href="{% url 'view_cart' %}" class=" btn btn-style text-uppercase me-2">
                             <span class="icon">
@@ -71,6 +73,7 @@
             </div>   
         </div>
 </div>
+<!-- a spinner apears, while the payment in the progress-->
 <div id="loading-overlay">
     <h1 class="text-light logo-font loading-spinner">
         <span class="icon">

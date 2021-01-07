@@ -157,12 +157,13 @@ Features planned, implemented, and outlined for later development.
 
 In this section will be provided the testing proccess and results. Because this project consists from multible apps, the each paragraph represent the appropriate app.
 
-###### cart 
+### cart 
 
-the code was tested using JSHint, no major error
+the code was tested using JSHint, no major error. The functionality - update the quantity and remove the products from the cart. If you will use the arrows it will increase or decrease the amount and the links upadate and remove work. 
+- [update-remove](source/update-remove.png)
 
 
-- [before-sent](source/update-remove.png)
+
 - [after-sent](source/before-sent.png)
 - [mail-box](source/mail-box.png)
 
