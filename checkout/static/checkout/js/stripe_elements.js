@@ -51,7 +51,7 @@ $("#submit-button").click(function (e) {
 
     // take and proccess the value of county
     var county = $("[name='county']").val();
-    var countyRGEX = /[^0-9a-zA-Z]/g;
+    var countyRGEX = /[^a-zA-Z]/g;
     var check_county = countyRGEX.test(county);
     var result_county = county.match(countyRGEX, "");
     var county_place_holder = $("[name='county']").attr('placeholder');
@@ -149,7 +149,7 @@ $("#submit-button").click(function (e) {
         $("[name='postcode']").focus();
         if ($("[name='postcode']").siblings("label").text() == "") {
             $("[name='postcode']").parent().prepend(
-            $('<label class="text-danger" for="id_town_or_city">' + town_or_city_place_holder + '</label>'));
+            $('<label class="text-danger" for="id_town_or_city">' + postcode_place_holder + '</label>'));
         }
         messages.push(message_postcode);
         e.preventDefault();
@@ -165,7 +165,7 @@ $("#submit-button").click(function (e) {
         $("[name='county']").focus();
         if ($("[name='county']").siblings("label").text() == "") {
             $("[name='county']").parent().prepend(
-            $('<label class="text-danger" for="id_county">' + town_or_city_place_holder + '</label>'));
+            $('<label class="text-danger" for="id_county">' + county_place_holder + '</label>'));
         }
         messages.push(message_county);
         e.preventDefault();
