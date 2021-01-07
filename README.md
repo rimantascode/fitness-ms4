@@ -192,6 +192,11 @@ index html tested with:
 view tested width:
 [http://pep8online.com/](http://pep8online.com/)  - no major problems found. 
 
+### products 
+forms, models, views, admin validated with:
+[https://validator.w3.org/](https://validator.w3.org/) - no major problems except some lines are slightly to long.
+
+
 
 
 

@@ -1,6 +1,7 @@
 from django.db import models
 from .widgets import CustomClearableFileInput
 
+
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "Categories"

@@ -6,6 +6,7 @@ from django.db.models.functions import Lower
 from .models import Product, Category
 from .forms import ProductForm
 
+
 def all_products(request):
     """ A view to return all products page"""
 
@@ -31,7 +32,7 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-    # sorting the products by the categories   
+    # sorting the products by the categories
     if 'category' in request.GET:
         categories = request.GET['category'].split(',')
         products = products.filter(category__name__in=categories)
@@ -50,7 +51,7 @@ def all_products(request):
 
         products = products.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'  
+    current_sorting = f'{sort}_{direction}'
     context = {
         'products': products,
         'search_term': query,
@@ -69,10 +70,11 @@ def product_detail(request, product_id):
     }
     return render(request, 'products/product_detail.html', context)
 
+
 @login_required
 def add_product(request):
     """ Add a product to the store """
-    
+
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only admin can do that.')
         return redirect(reverse('home'))
@@ -104,7 +106,7 @@ def edit_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that...')
         return redirect(reverse('home'))
-        #return render(request, 'home/index.html')
+        # return render(request, 'home/index.html')
 
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
@@ -124,14 +126,14 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
-        }
+    }
 
     return render(request, template, context)
 
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """ Delete a product from the site """
 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
