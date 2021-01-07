@@ -159,10 +159,15 @@ In this section will be provided the testing proccess and results. Because this 
 
 ### cart 
 
-the code was tested using JSHint, no major error. The functionality - update the quantity and remove the products from the cart. If you will use the arrows it will increase or decrease the amount and the links upadate and remove work. 
+the code was tested using JSHint, no major error. The functionality - update the quantity and remove the products from the cart. If you will use the arrows it will increase or decrease the amount and the links upadate and remove work and also the buttons KEEP SHOPPING and SECURE CHECKOUT takes to the appropriate destination. 
 - [update-remove](source/update-remove.png)
+views and context tested and with [http://pep8online.com/](http://pep8online.com/) no errors found.
+the HTML was tested width [https://validator.w3.org/](https://validator.w3.org/) no errors found, except that it does not recognise jinja template language.
 
 
+### checkout
+
+The
 
 - [after-sent](source/before-sent.png)
 - [mail-box](source/mail-box.png)
