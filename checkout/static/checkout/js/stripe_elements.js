@@ -110,7 +110,7 @@ $("#submit-button").click(function (e) {
 
     //validate street address 2
     if (check_address_street_2 == true) {
-        message_street_2 = "Sorry, but these symbols ( " + result_address_street_2 + " ) are not allowed in field " + "<strong>" + address_street_2_place_holder + "</trong>";
+        message_street_2 = "Sorry, but these symbols ( " + result_address_street_2 + " ) are not allowed in field " + "<strong>" + address_street_2_place_holder + "</strong>";
         $("[name='street_address2']").addClass("border border-danger");
         $("[name='street_address2']").focus();
         if ($("[name='street_address2']").siblings("label").text() == "") {
