@@ -1,10 +1,12 @@
 # Fitness World MS 4
 
  
+This website is designded for the fitness and gym sociaty, the potentional customers are able to see the exercises plans and nutritions plans, at the same time are able to by single items to improve the qulity of exerces and results.
 
-Dynamic recipes with an interactive design that consists of front-end and back-end with the abilities to add, edit, update, delete the recipes simple and easy, just filling the form, or modifying the form. It uses MongoDB and written using Flask Micro Framework, HTML5, CSS3, jQuery, Javascript
-Hosted on [Heroku](https://cookbook-ms3.herokuapp.com/)
-Repository on [GitHub](https://github.com/rimantascode/MS3-cookbook)
+The idea was todesign the website with the functionality quickly implement new products and exercises plans, nutritions plans, so any owner could manage the products not being skilled in web aplication development.
+
+Hosted on [Heroku](https://fiteness-world-ms4.herokuapp.com/)
+Repository on [GitHub](https://github.com/rimantascode/fitness-ms4)
 
 ## License
 
@@ -24,19 +26,23 @@ the Free Software Foundation, either version 3 of the License, or
 
 User stories shaped my idea of how to create this project. 
 
-As a website owner,
-I want to manage the recipes easily and quickly so that I would include the function like add, edit, or delete and opportunity to share the new recipes in the social media with few clicks.  
-
-As a visitor of the website, I am happy that the main information is displayed, and it easy to read.
-
-As a person who is always thinking about what to make for dinner,
-I like to see what is possible to cook from the stuff in the fridge, so I would not need to run to the store. It is easy to navigate and find the recipe by the main ingredient: the type of meat. 
-
-As a user of the recipes websites, 
-I do not like to read a lot, so a big and clear picture gives me an impression of what then the dish would be like. 
+- Owner Goals.
+- As admin I want to sell the exercises plans, nutrition Plans, nutrition and exercises products to earn money.
+- As a admin I want the customers to register, so that I could keep the customers informed about the latest products.
+- As admin I want to send emails about the latest products, so that will ensure returning customers.
+- As admin I want the customers to register, so they would no loose the cart content.
+- As  admin I want the user to register, so they would only this way would be able access the subscription content.
+- As admin I want to add, edit, update, delete the products with the simple form. 
 
 
----
+- User Goals
+- As a user I can see my purchased products in my profile, so I can keep track for my own records.
+- As a user I want to see the ratings of the products , that would helps to choose the product. 
+- As a user I can sort the products by the ratings or price.
+- As a user I want to buy single products, I need for the exercises.
+- As a user I user I want to have the subscription, so that would let me to full content of the site.
+- As a user I want can see the product in detail, so that provides more information about the product.
+
 
 ## Design Process
 
@@ -46,33 +52,25 @@ I do not like to read a lot, so a big and clear picture gives me an impression o
 4. **Skeleton plane:** Once the structure plane was in place started to put all together using Figma. Added 5 categories of the main ingredients. The user can get the results only related to the category - the main ingredient. Add button takes the user to the add recipe page which consists of the header and a form, once filled up and meats all requirements can be submitted. When the visitor clicks on the categories the cards appear( as you can see in the mock-up I changed the size of the cards and how is the picture displayed). The user can see the picture on the left side of the card and the information on the right side. The name of the recipe, the cooking time, and the difficulty level is displayed and the majority of the ingredients required are also displayed. Down below three buttons delete, edit, and see the recipe in detail. The Edit page will keep the same structure - the navigation, hero image add button, and share links In place, but beneath there is a form that can be edited and the button update recipe. Once the button clicked the user will be taken to the dish.html page to review the changes. In the dish page there is a floating button with delete, edit, and add recipe functions to let the user do with the recipe what he wants straightway. 
 5. **Surface plane:** When the skeleton plane was in place. Decided to do a research on what colors can make the people hungry? There were a lot of opinions, so narrowed down too much the colors. From Google fonts choice the fonts and finished the design. the footer took from materializecss and made the same color as navigation. 
 
-- **About Us** simple page with a picture and some text about the project.
-- **Contact Us** the design of this page remains simple containing a form, and once it is filled up and meets the requirements can be submitted and the user will get feedback whether it was successfully sent or not.
-
 ## color Scheme
 
-- ![#f7f7f7](https://placehold.it/15/f7f7f7/000000?text=+) `#f7f7f7`
-- ![#964600](https://placehold.it/15/964600/000000?text=+) `#964600`
-- ![#666666](https://placehold.it/15/666666/000000?text=+) `#666666`
-- ![#ffffff](https://placehold.it/15/ffffff/000000?text=+) `#ffffff`
-- ![#f5f5dc](https://placehold.it/15/f5f5dc/000000?text=+) `#f5f5dc`
-- ![#ff9900](https://placehold.it/15/ff9900/000000?text=+) `#ff9900`
-- ![#ff0000](https://placehold.it/15/ff0000/000000?text=+) `red`
-- ![#edebeb](https://placehold.it/15/edebeb/000000?text=+) `#edebeb`
 - ![#000000](https://placehold.it/15/000000/000000?text=+) `black`
-- ![#008464 ](https://placehold.it/15/008464/000000?text=+) `#008464`
-- ![#0761afb3](https://placehold.it/15/0761afb3/000000?text=+) `#0761afb3`
-- ![#ec373780](https://placehold.it/15/ec373780/000000?text=+) `#ec373780`
-- ![#6aa6ed](https://placehold.it/15/6aa6ed/000000?text=+) `#6aa6ed`
-- ![#f44336](https://placehold.it/15/f44336/000000?text=+) `materializecss red class`
-- ![#26a69a](https://placehold.it/15/26a69a/000000?text=+) `materializecss lighten-2 class`
-- ![#4CAF50](https://placehold.it/15/4CAF50/000000?text=+) `materializecss green class`
+
+
+- ![#008464 ](https://placehold.it/15/d40000/000000?text=+) `#d40000`
+- ![#008464 ](https://placehold.it/15/ffc107/000000?text=+) `#ffc107 bootstrap warning`
+- ![#008464 ](https://placehold.it/15/000F9A/000000?text=+) `#000F9A`
+- ![#008464 ](https://placehold.it/15/dc3545/000000?text=+) `#dc3545 bootsrap danger`
+- ![#008464 ](https://placehold.it/15/dc3545/000000?text=+) `#dc3545 bootsrap danger`
+
+- ![#008464 ](https://placehold.it/15/6452d2/000000?text=+) `#6452d2`
+- ![#008464 ](https://placehold.it/15/0dcaf0/000000?text=+) `#0dcaf0 bootsrap info`
+- ![#008464 ](https://placehold.it/15/0dcaf0/000000?text=+) `#0dcaf0 bootsrap info`
+- ![#008464 ](https://placehold.it/15/6c757d/000000?text=+) `#6c757d`
 
 ## Typography
 
-- Fonts used throughout the website.
-font-family: "Permanent Marker", cursive.
-font-family: "Roboto", sans-serif.
+sans-serif.
 
 ### Mockup
 
@@ -88,39 +86,70 @@ Features planned, implemented, and outlined for later development.
 
 - Documentation - ReadMe File, Licence & Mockups.
 - Colour Scheme.
-- materializecss - HTML, CSS Framework.
-  - Grid System - Columns and Rows.
+- Login mechanism
 - Responsive design - Mobile First.
 - Authentication.
 - Logo.
 - UX elements.
-- Accessibility.
-- Contact Form
 - Git - Version Control System
 - GitHub - Remote Repository
 - Hosted - on Heroku
 - Deployed - On Github. 
+- Subscription - using stripe
+- cart for merchendise items.
+- Take payments - using stripe.
+- The emails sent on purchase of any merchendise item.
+- The confirmation letters sent once the customer register.
+- Subscribed user access only the exersises plans.
+- Nutrition plans, not logged in user would be able to see 10 plans.
+- Sell the items on the website realated to fitness.
+- Implement the form to on front end to add the products to the website.
+- Implement the quick way to add exercises plans using backend.
+- Sort the products by categaries, price alhabeticly.
+- Search the product in the store.
+- in the home page the customer would be able to see the most popular and newst items.
+- checkout form validation.
+- Messages displaying on the top of the page, telling what actions is doing the website. for example when user loggs in it tells to the user that he is logged in. 
+- Footer.
+- News letter
+
+
+
 
 ### Existing Features
 
 - Documentation - ReadMe File, Licence & Mockups.
-- Display the period of time when the recipe was added.
 - Colour Scheme.
-- materializecss - HTML, CSS Framework.
-  - Grid System - Columns and Rows.
+- Login mechanism
 - Responsive design - Mobile First.
+- Authentication.
+- Logo.
 - UX elements.
-- Accessibility.
-- Gitpod - Version Control System.
+- Git - Version Control System.
 - GitHub - Remote Repository.
 - Hosted - on Heroku.
-- Deployed - On Github. 
-- Pagination - added pagination for more convenient search and also it reduces the loading time of the page.- Counts the letters in the title to make sure the people enter more descriptive titles. - Sweet Alert - it asks for confirmation to delete the recipe.  
+- Deployed - On Github. 
+- Subscription - using stripe.
+- cart for merchendise items.
+- Take payments - using stripe.
+- The emails sent on purchase of any merchendise item.
+- The confirmation letters sent once the customer register.
+- Subscribed user access only the exersises plans.
+- Sell the items on the website realated to fitness.
+- Implement the form to on front end to add the products to the website.
+- Implement the quick way to add exercises plans using backend.
+- Sort the products by categaries, price alhabeticly.
+- Search the product in the store.
+- Checkout form validation.
+- Messages displaying on the top of the page, telling what actions is doing the website. for example when user loggs in it tells to the user that he is logged in. 
 
 ### Features Left to Implement/fix
 
-- Authentication
-- custom logo
+- Nutrition plans, not logged in user would be able to see 10 plans.
+- In the home page the customer would be able to see the most popular and newst items.
+- Footer.
+- News letter
+
 
 ## Technologies Used.
 
@@ -138,8 +167,6 @@ Features planned, implemented, and outlined for later development.
   - Used for browsing and testing responsiveness.
 - [Google](https://www.google.com/)
   - **Google** was used for research, work and testing responsiveness
-- [materializecss.com](https://materializecss.com/)
-  - HTML and CSS Framework from **materializecss.com v1.0.0 ** and **jQuery code**
 - [Gitpod](https://www.gitpod.io/)
   - **Git** used for Version Control
 - [GitHub](https://github.com/)
@@ -148,12 +175,18 @@ Features planned, implemented, and outlined for later development.
   - Website hosted on **Github Pages**
 - [Am I Responsive](http://ami.responsivedesign.is)
   - Testing responsiveness of the website **Am I Responsive**
+- [AWS](https://aws.amazon.com/)
+  - Used to store the static files, and media.
+- [fontawsome](https://fontawesome.com/)
+  - Used icons
+- [bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  - Used icons
 - [Figma](https://www.figma.com/)
   - used to make a mockup
 - All the libraries including the flask micro Framework have to be installed. All of them are listed in the requirements.txt, how to install please see the **Deployment** section.
 
 
-### Manual Testing
+## Manual Testing
 
 In this section will be provided the testing proccess and results. Because this project consists from multible apps, the each paragraph represent the appropriate app.
 
@@ -227,13 +260,20 @@ The functionality tested manually, it works and updates the information.
 ### subscription_plans 
 
 admin, models, views tested with:
-    - [http://pep8online.com/](http://pep8online.com/) - no major problems found, except some line are slightly too long.
-    
-### Code Validation
+- [http://pep8online.com/](http://pep8online.com/) - no major problems found, except some line are slightly too long.
+
+The html files in templates forlder tested with:
+[https://validator.w3.org/](https://validator.w3.org/) - 
+no major problems found except that jinja templating couses and error.
+
+### base.html 
+
+base html validate not major error found. bases.html included to navigations one for bigger screen and other for smaller screens.
+### CSS Validation
 
 To validate my CSS and HTML code I used [https://validator.w3.org/](https://validator.w3.org/) 
 
-To validate the PYTHON3 code [http://pep8online.com/ch/eckresult](http://pep8online.com/ch/eckresult) 
+
 
 
 ### Testing on Browsers
@@ -242,7 +282,7 @@ Tested on Google Chrome, Opera, Mozilla firefox. No issues.
 
 ### Testing on Devices
 
-Used Google Chrome, Opera, Mozilla Firefox browser to test the responsiveness, it flows well on any type of device.
+Used Google Chrome, Opera, Mozilla Firefox browser to test the responsiveness, for all sizes looks satisfing, but on Galxy fold does not look, it has to be looked in to it.
 
 ## Deployment
 
