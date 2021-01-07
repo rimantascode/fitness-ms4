@@ -47,7 +47,7 @@ $("#submit-button").click(function (e) {
     var postcodeRGEX = /[^0-9a-zA-Z ]/g;
     var check_postcode = postcodeRGEX.test(postcode);
     var result_postcode = postcode.match(postcodeRGEX, "");
-    var postcode_place_holder = $("[name='town_or_city']").attr('placeholder');
+    var postcode_place_holder = $("[name='postcode']").attr('placeholder');
 
     // take and proccess the value of county
     var county = $("[name='county']").val();
