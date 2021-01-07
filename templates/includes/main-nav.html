@@ -7,7 +7,6 @@
           <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="all-products">
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Ratings</a></li>
-            <li><a class="dropdown-item" href="#">By Newests</a></li>
             <li><a class="dropdown-item" href="{% url 'products' %}">All products</a></li>
           </ul>
         </li>
@@ -25,7 +24,6 @@
             Plans
           </a>
           <ul class="dropdown-menu dropdown-menu-dark nav-bg" aria-labelledby="useful-items">
-            <li><a class="dropdown-item" href="{% url 'products' %}?category=nutrition_plans">Nutritions Plans</a></li>
             <li><a class="dropdown-item" href="{% url 'all_exercises_plans' %}">Exercises Plans</a></li>
           </ul>
         </li>

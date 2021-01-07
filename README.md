@@ -365,9 +365,9 @@ Thank you.
 - [photo](https://www.flickr.com/photos/dennis/102679650
 https://live.staticflickr.com/32/102679650_cd10235c8f_k_d.jpg) for very nice picture.)
 - Thank You
-[picture](https://www.pexels.com/photo/photo-of-woman-raising-dumbbells-2475878)
-[picture](https://www.pexels.com/photo/balance-body-exercise-female-374101/)
-[picture](https://www.pexels.com/photo/yoga-instructor-helping-a-student-3822719/)
+- [picture](https://www.pexels.com/photo/photo-of-woman-raising-dumbbells-2475878)
+- [picture](https://www.pexels.com/photo/balance-body-exercise-female-374101/)
+- [picture](https://www.pexels.com/photo/yoga-instructor-helping-a-student-3822719/)
 
 ### Acknowledgements
 
