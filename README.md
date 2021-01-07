@@ -151,7 +151,8 @@ Features planned, implemented, and outlined for later development.
 - Nutrition plans, not logged in user would be able to see 10 plans.
 - On the home page the customer would be able to see the most popular and newest items.
 - Footer.
-- Newsletter.
+- Newsletter.1
+- For some reason when resizing the window from 1200 the products become 3 in column, and it looks like it still could fit in, that has to be fixed
 
 
 ## Technologies Used.
