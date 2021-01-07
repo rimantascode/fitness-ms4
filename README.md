@@ -1,9 +1,9 @@
 # Fitness World MS 4
 
  
-This website is designded for the fitness and gym sociaty, the potentional customers are able to see the exercises plans and nutritions plans, at the same time are able to by single items to improve the qulity of exerces and results.
+This website is designded for the fitness and gym society, the potential customers are able to see the exercise plans and nutritions plans, at the same time are able to buy single items to improve the quality of exercise and results.
 
-The idea was todesign the website with the functionality quickly implement new products and exercises plans, nutritions plans, so any owner could manage the products not being skilled in web aplication development.
+The idea was to design the website with the functionality quickly implement new products and exercise plans, nutritions plans, so any owner could manage the products not being skilled in web application development.
 
 Hosted on [Heroku](https://fiteness-world-ms4.herokuapp.com/)
 Repository on [GitHub](https://github.com/rimantascode/fitness-ms4)
@@ -27,41 +27,40 @@ the Free Software Foundation, either version 3 of the License, or
 User stories shaped my idea of how to create this project. 
 
 - Owner Goals.
-- As admin I want to sell the exercises plans, nutrition Plans, nutrition and exercises products to earn money.
-- As a admin I want the customers to register, so that I could keep the customers informed about the latest products.
-- As admin I want to send emails about the latest products, so that will ensure returning customers.
-- As admin I want the customers to register, so they would no loose the cart content.
-- As  admin I want the user to register, so they would only this way would be able access the subscription content.
-- As admin I want to add, edit, update, delete the products with the simple form. 
+- As an admin, I want to sell exercise plans, nutrition plans, nutrition, and fitness related products to earn money.
+- As an admin I want the customers to register so that I could keep the customers informed about the latest products.
+- As an admin, I want to send emails about the latest products, so that will ensure returning customers.
+- As admin I want the user to register, so they would only this way would be able to access the subscription content.
+- As admin I want to add, edit, update, delete the products with a simple form. 
 
 
 - User Goals
-- As a user I can see my purchased products in my profile, so I can keep track for my own records.
-- As a user I want to see the ratings of the products , that would helps to choose the product. 
-- As a user I can sort the products by the ratings or price.
+- As a user, I can see my purchased products in my profile, so I can keep track of my own records.
+- As a user, I want to see the ratings of the products, which would help to choose the product. 
+- As a user, I can sort the products by the ratings or price.
 - As a user I want to buy single products, I need for the exercises.
-- As a user I user I want to have the subscription, so that would let me to full content of the site.
+- As a user I want to have a subscription, so that would let me to the full content of the site.
 - As a user I want can see the product in detail, so that provides more information about the product.
 
 
 ## Design Process
 
-1. **Strategy plane:** The main aim is to build e-commerce website in which the customers would be able to join a fitness community, and purchase exercise plans and merchandise. What do I get in return? The income, If the customers will be registing I will be able to expanding the customers database, and send the newsletter width verias offers.
+1. **Strategy plane:** The main aim is to build an e-commerce website in which the customers would be able to join a fitness community, and purchase exercise plans and merchandise. What do I get in return? The income, If the customers will be registering I will be able to expand the customer's database and send the newsletter width varies offers.
 2. **Scope plane:** Subscription-Based community, user profiles containing information that map to nutrition and/ or exercises plan.
- Product review. 
- Subscription-based payment model.
- Individual item purchase capability.
- Profiles for each customer.
- Are able to sort the products by price and ratings. 
- Authentication and authorisation mechanism for subscribers and administrators. 
-3. **Structure plane:** The main page will be representing what is the website about. The products will be desplayd, and the customer will be able to click on the picture and the detailed information will be displayed with an oportunity to buy the item. If the customer will disire to see the exercies plans, then will be asked to buy the subscription, and once it will be activated, the exrecises plans will be seen.
-4. **Skeleton plane:** Once the structure plane was in place started to put all together using Figma. In first place I thought to have a big picture in home page, but latter I decided to have a carousel. The grid of the products releated to the fitness dicided to have 4 per column on bigger screens and 2 large and medium, and one culumn on small screens. the cart can be accessed by clicking on the cart. The items in cart displayed in table and have the fucntionality to update and remove the items.
-5. **Surface plane:** When I had the idea how the website will look like matched the colors, the most realated to the fitness, when I have done the reasearch on what colours are used in the gym and fitness added those to my website.
+ Product review. 
+ Subscription-based payment model.
+ Individual item purchase capability.
+ Profiles for each customer.
+ Are able to sort the products by price and ratings. 
+ Authentication and authorization mechanism for subscribers and administrators. 
+3. **Structure plane:** The main page will be representing what is the website about. The products will be displayed, and the customer will be able to click on the picture and the detailed information will be displayed with an opportunity to buy the item. If the customer will desire to see the exercise plans, then will be asked to buy the subscription, and once it will be activated, the exercise plans will be seen.
+4. **Skeleton plane:** Once the structure plane was in place started to put it all together using Figma. In the first place, I thought to have a big picture in the home page, but later I decided to have a carousel. The grid of the products related to the fitness decided to have 4 per column on bigger screens and 2 large and medium, and one column on small screens. the cart can be accessed by clicking on the cart. The items in the cart displayed in the table and have the functionality to update and remove the items.
+5. **Surface plane:** When I had the idea how the website will look like matched the colors, the most related to the fitness when I have done the research on what colors are used in the gym and fitness added those to my website.
 
-**Conclusion** The website look a bit different then in mockup represented, that is because I find adding some thinks or the other make look more simplier and better. 
+**Conclusion** The website looks a bit different than in the mockup represented, that is because I find adding some thinks or the other make look more simpler and better. 
 
 
-## color Scheme
+## Color Scheme
 
 - ![#000000](https://placehold.it/15/000000/000000?text=+) `black`
 - ![#008464 ](https://placehold.it/15/d40000/000000?text=+) `#d40000`
@@ -100,22 +99,22 @@ Features planned, implemented, and outlined for later development.
 - Hosted - on Heroku
 - Deployed - On Github. 
 - Subscription - using stripe
-- cart for merchendise items.
+- cart for merchandise items.
 - Take payments - using stripe.
-- The emails sent on purchase of any merchendise item.
+- The emails sent on purchase of any merchandise item.
 - The confirmation letters sent once the customer register.
-- Subscribed user access only the exersises plans.
+- Subscribed user access only exercise plans.
 - Nutrition plans, not logged in user would be able to see 10 plans.
-- Sell the items on the website realated to fitness.
-- Implement the form to on front end to add the products to the website.
-- Implement the quick way to add exercises plans using backend.
-- Sort the products by categaries, price alhabeticly.
+- Sell the items on the website related to fitness.
+- Implement the form on the front end to add the products to the website.
+- Implement a quick way to add exercise plans using the backend.
+- Sort the products by categories, price alphabetically.
 - Search the product in the store.
-- In the home page the customer would be able to see the most popular and newst items.
+- On the home page the customer would be able to see the most popular and newest items.
 - Checkout form validation.
-- Messages displaying on the top of the page, telling what actions is doing the website. for example when user loggs in it tells to the user that he is logged in. 
+- Messages displaying on the top of the page, telling what actions is doing the website. for example when the user logs in it tell the user that he is logged in. 
 - Footer.
-- News letter.
+- Newsletter.
 
 
 
@@ -134,25 +133,25 @@ Features planned, implemented, and outlined for later development.
 - Hosted - on Heroku.
 - Deployed - On Github. 
 - Subscription - using stripe.
-- cart for merchendise items.
+- cart for merchandise items.
 - Take payments - using stripe.
-- The emails sent on purchase of any merchendise item.
+- The emails sent on purchase of any merchandise item.
 - The confirmation letters sent once the customer register.
-- Subscribed user access only the exersises plans.
-- Sell the items on the website realated to fitness.
-- Implement the form to on front end to add the products to the website.
-- Implement the quick way to add exercises plans using backend.
-- Sort the products by categaries, price alhabeticly.
+- Subscribed users access only the exercise plans.
+- Sell the items on the website related to fitness.
+- Implement the form on the front end to add the products to the website.
+- Implement a quick way to add exercise plans using the backend.
+- Sort the products by categories, price alphabetically.
 - Search the product in the store.
 - Checkout form validation.
-- Messages displaying on the top of the page, telling what actions is doing the website. for example when user loggs in it tells to the user that he is logged in. 
+- Messages displaying on the top of the page, telling what actions is doing the website. for example when the user logs in it tell the user that he is logged in. 
 
 ### Features Left to Implement/fix
 
 - Nutrition plans, not logged in user would be able to see 10 plans.
-- In the home page the customer would be able to see the most popular and newst items.
+- On the home page the customer would be able to see the most popular and newest items.
 - Footer.
-- News letter.
+- Newsletter.
 
 
 ## Technologies Used.
@@ -164,13 +163,13 @@ Features planned, implemented, and outlined for later development.
 - [JavaScript](https://simple.wikipedia.org/wiki/JavaScript)
   - **JS** for creating dynamic functions, manipulating google places api.
 - [jQuery](https://en.wikipedia.org/wiki/JQuery)
-  - **jQuery** very usefull for traversing and events handeling
+  - **jQuery** very useful for traversing and events handling
 - [Google Chrome](https://www.google.com/chrome/)
   - Used for browsing and dev tools
 - [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new)
   - Used for browsing and testing responsiveness.
 - [Google](https://www.google.com/)
-  - **Google** was used for research, work and testing responsiveness
+  - **Google** was used for research, work, and testing responsiveness
 - [Gitpod](https://www.gitpod.io/)
   - **Git** used for Version Control
 - [GitHub](https://github.com/)
@@ -180,7 +179,7 @@ Features planned, implemented, and outlined for later development.
 - [Am I Responsive](http://ami.responsivedesign.is)
   - Testing responsiveness of the website **Am I Responsive**
 - [AWS](https://aws.amazon.com/)
-  - Used to store the static files, and media.
+  - Used to store static files and media.
 - [fontawsome](https://fontawesome.com/)
   - Used icons
 - [bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
@@ -192,25 +191,25 @@ Features planned, implemented, and outlined for later development.
 
 ## Manual Testing
 
-In this section will be provided the testing proccess and results. Because this project consists from multible apps, the each paragraph represent the appropriate app.
+In this section will be provided the testing process and results. Because this project consists of multiple apps, each paragraph represents the appropriate app.
 
 ### cart 
 
-the JS code was tested using JSHint, no major error. The functionality - update the quantity and remove the products from the cart. If you will use the arrows it will increase or decrease the amount and the links upadate and remove work and also the buttons KEEP SHOPPING and SECURE CHECKOUT takes to the appropriate destination. 
+the JS code was tested using JSHint, with no major error. The functionality - update the quantity and remove the products from the cart. If you will use the arrows it will increase or decrease the amount and the links update and remove work and also the buttons KEEP SHOPPING and SECURE CHECKOUT takes to the appropriate destination. 
 - [update-remove](source/update-remove.png)
 views and context tested and with:
 -[http://pep8online.com/](http://pep8online.com/) no errors found.
 the HTML was tested width 
-- [https://validator.w3.org/](https://validator.w3.org/) no errors found, except that it does not recognise jinja template language.
+- [https://validator.w3.org/](https://validator.w3.org/) no errors found, except that it does not recognize the jinja template language.
 
 
 ### checkout
-views, webhook_handler, webbhooks, models, forms tested with:
-- [http://pep8online.com/](http://pep8online.com/) - no major probelms found except some lines are slightly to long.
+views, webhook_handler, webhooks, models, forms tested with:
+- [http://pep8online.com/](http://pep8online.com/) - no major problems found except some lines are slight to long.
 
-The html files in templates forlder tested with:
+The HTML files in templates folder tested with:
 - [https://validator.w3.org/](https://validator.w3.org/) - 
-no major problems found except that jinja templating couses and error.
+no major problems found except that jinja templating courses and error.
 
 stripe_elements.js tested with:
 - [https://jshint.com/](https://jshint.com/) - no major found just 2 warnings "'template literal syntax' is only available in ES6 (use 'esversion: 6')."
@@ -229,20 +228,20 @@ index html tested with:
 - [https://validator.w3.org/](https://validator.w3.org/) - no major problems found, except that it does not understand jinja templating.
 
 view tested width:
-- [http://pep8online.com/](http://pep8online.com/)  - no major problems found. 
+- [http://pep8online.com/](http://pep8online.com/)  - no major problems found. 
 
 ### products 
 forms, models, views, admin validated with:
 
-- [http://pep8online.com/](http://pep8online.com/) - no major problems except some lines are slightly to long.
+- [http://pep8online.com/](http://pep8online.com/) - no major problems except some lines are slightly too long.
 
-the tempaltes tested with
-- [https://validator.w3.org/](https://validator.w3.org/) - no major problems except jinja tempating is not recognized.
+the templates tested with
+- [https://validator.w3.org/](https://validator.w3.org/) - no major problems except jinja templating is not recognized.
 
 JavaScript tested with:
-- [https://jshint.com/](https://jshint.com/) no majar problems found.
+- [https://jshint.com/](https://jshint.com/) no major problems found.
 
-Manully tested the functionality. Products are dsplayed and can be arranged by Price and reating using the top navigation or the select box. All buttons work. edit and delete buttons can be seen only by the admin. 
+Manually tested the functionality. Products are displayed and can be arranged by Price and rating using the top navigation or the select box. All buttons work. edit and delete buttons can be seen only by the admin. 
 
 - [edit-delete-products](source/edit-delete-products.png)
 - [edit-delete-product-details](source/edit-delete-products.png)
@@ -255,26 +254,26 @@ Manully tested the functionality. Products are dsplayed and can be arranged by P
 forms, models, views tested with:
 - [http://pep8online.com/](http://pep8online.com/) - no major problems found.
 
-the tempaltes tested with
+the templates tested with
 - [https://validator.w3.org/](https://validator.w3.org/) - no major problems except jinja templating is not recognized.
 
 JavaScript tested with:
-- [https://jshint.com/](https://jshint.com/) no majar problems found.
+- [https://jshint.com/](https://jshint.com/) no major problems found.
 
 The functionality tested manually, it works and updates the information.
 
 ### subscription_plans 
 
 admin, models, views tested with:
-- [http://pep8online.com/](http://pep8online.com/) - no major problems found, except some line are slightly too long.
+- [http://pep8online.com/](http://pep8online.com/) - no major problems found, except some lines are slightly too long.
 
-The html files in templates forlder tested with:
+The HTML files in the templates folder tested with:
 - [https://validator.w3.org/](https://validator.w3.org/) - 
-no major problems found except that jinja templating couses and error.
+no major problems found except that jinja templating courses and error.
 
 ### base.html 
 
-base html validate not major error found. bases.html included to navigations one for bigger screen and other for smaller screens.
+base HTML validate not major error found. bases.html includes two navigations one for a bigger screen and the other for smaller screens.
 ### CSS Validation
 
 To validate my CSS and HTML code I used [https://validator.w3.org/](https://validator.w3.org/) 
@@ -288,16 +287,16 @@ Tested on Google Chrome, Opera, Mozilla firefox. No issues.
 
 ### Testing on Devices
 
-Used Google Chrome, Opera, Mozilla Firefox browser to test the responsiveness, for all sizes looks satisfing, but on Galxy fold does not look, it has to be looked in to it.
+Used Google Chrome, Opera, Mozilla Firefox browser to test the responsiveness, for all sizes looks satisfying, but on Galaxy fold does not look, it has to be looked into it.
 
-## Deployment localy
+## Deployment locally
 
 The process involved:
 
-- In this project, you have to use Code institute template [here](https://github.com/Code-Institute-Org/gitpod-full-template).
-- Click the green button "use this template" .
-- How to create a new repository [here](https://docs.github.com/en/enterprise/2.15/user/articles/create-a-repo) , but in this case enter the title of the project, the description, choose privet or poblic, and click create repository from template. 
-- On the GitHub repository settings page move to GitHub Pages section.
+- In this project, you have to use the Code institute template [here](https://github.com/Code-Institute-Org/gitpod-full-template).
+- Click the green button "use this template".
+- How to create a new repository [here](https://docs.github.com/en/enterprise/2.15/user/articles/create-a-repo) , but in this case enter the title of the project, the description, choose privet or public and click create a repository from the template. 
+- On the GitHub repository settings page move to the GitHub Pages section.
 - Change source to master branch. (Or any desired branch).
 - Once the workspace is ready:
 - In the terminal, in your root directory.
@@ -306,15 +305,15 @@ The process involved:
 - for example `git clone git@github.com:rimantascode/fitness-ms4.git` 
 - Install requirements.txt by typing in the terminal 
 - `pip3 install -r requirements.txt`
-- In this cloned version the pictures might not be the best quality. But you can easily add new product by using you own pictures, it is advisible to use the same size pictures for the best look.
-- create an enviroment variables in GitPod settings.
+- In this cloned version the pictures might not be the best quality. But you can easily add a new product by using your own pictures, it is advisable to use the same size pictures for the best look.
+- create an environment variable in GitPod settings.
 - You have to will have to register to stripe and retrieve the keys.
-- Also create the product in the strpe and retrieve the Price ID. 
+- Also create the product in the stripe and retrieve the Price ID. 
 - SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_SUB_WEBHOOK(this is for subscription webhook, secret key),
 - DEVELOPMENT set to True.
 - run the command line in the terminal 
 - `python3 manage.py runserver`
-- readt to use!!!
+- ready to use!!!
 
 ## Deploy to Heroku
 - You will need to create s3 bucket in [AWS](https://aws.amazon.com)
