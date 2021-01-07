@@ -71,11 +71,16 @@
                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
                         <p class="small text-center">{{product.category.friendly_name}}</p>
                     </a>
-                    {% endif %}  
-                <div class="d-flex justify-content-center">
-                    <a class="btn btn-sm btn-warning m-1" href="{% url 'edit_product' product.id %}">EDIT </a>
-                    <a class="btn btn-sm btn-outline-danger m-1" href="{% url 'delete' product.id %}">DELETE</a>
-                </div>
+                    {% endif %}
+                   
+                    <div class="d-flex justify-content-center">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a class="btn btn-sm btn-warning m-1" href="{% url 'edit_product' product.id %}">EDIT </a>
+                        <a class="btn btn-sm btn-outline-danger m-1" href="{% url 'delete' product.id %}">DELETE</a>
+                        {% endif %}
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>

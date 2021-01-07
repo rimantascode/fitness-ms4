@@ -45,8 +45,12 @@
                     {% csrf_token %}      
                     <div class="form-group w-50 inputs">
                         <div class="d-flex justify-content-start">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
                             <a class="btn btn-sm btn-warning m-1 ms-0" href="{% url 'edit_product' product.id %}">EDIT </a>
                             <a class="btn btn-sm btn-outline-danger m-1" href="{% url 'delete' product.id %}">DELETE</a>
+                            {% endif %}
+                            {% endif %}
                         </div>
                         <p class="mt-3"><strong>Quantity:</strong></p>
                         <div class="input-group">    
@@ -76,8 +80,6 @@
         </div>    
     </div>
 </div>
-   
-      
 {% endblock %}
 
 {% block postloadjs %}
