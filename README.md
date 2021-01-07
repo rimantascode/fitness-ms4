@@ -187,14 +187,32 @@ The checkout:
 ### home
 
 index html tested with:
-[https://validator.w3.org/](https://validator.w3.org/) - no major problems found, except that it does not understand jinja templating.
+- [https://validator.w3.org/](https://validator.w3.org/) - no major problems found, except that it does not understand jinja templating.
 
 view tested width:
-[http://pep8online.com/](http://pep8online.com/)  - no major problems found. 
+- [http://pep8online.com/](http://pep8online.com/)  - no major problems found. 
 
 ### products 
 forms, models, views, admin validated with:
-[https://validator.w3.org/](https://validator.w3.org/) - no major problems except some lines are slightly to long.
+
+- [http://pep8online.com/](http://pep8online.com/) - no major problems except some lines are slightly to long.
+
+the tempaltes tested with
+- [https://validator.w3.org/](https://validator.w3.org/) - no major problems except jinja tempating is not recognized.
+
+JavaScript tested with:
+- [https://jshint.com/](https://jshint.com/) no majar problems found.
+
+Manully tested the functionality. Products are dsplayed and can be arranged by Price and reating using the top navigation or the select box. All buttons work. edit and delete buttons can be seen only by the admin. 
+
+- [edit-delete-products](source/edit-delete-products.png)
+- [edit-delete-product-details](source/edit-delete-products.png)
+
+- [no-buttons](source/no-buttons.png)
+- [no-buttons-2](source/no-buttons-2.png)
+
+
+
 
 
 

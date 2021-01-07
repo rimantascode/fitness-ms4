@@ -10,15 +10,15 @@
 // menu.
 
 
-     /*
-    Core logic/payment flow for this comes from here:
-    https://stripe.com/docs/payments/accept-a-payment
-    CSS from here: 
-    https://stripe.com/docs/stripe-js
+/*
+Core logic/payment flow for this comes from here:
+https://stripe.com/docs/payments/accept-a-payment
+CSS from here: 
+https://stripe.com/docs/stripe-js
 */
 
 $("#submit-button").click(function (e) {
-    messages=[];
+    messages = [];
     // take and proccess the value of the full name
     var full_name = $("[name='full_name']").val();
     var inputRGEX = /[^a-zA-Z ]/g;
@@ -70,17 +70,17 @@ $("#submit-button").click(function (e) {
 
     //validate full name
     if (check_fullname == true) {
-       
-        var message="Sorry, but these symbols ( " + result_fullname +" ) are not allowed in field " + "<strong>"+full_name_place_holder+"</strong>";
+
+        var message = "Sorry, but these symbols ( " + result_fullname + " ) are not allowed in field " + "<strong>" + full_name_place_holder + "</strong>";
         $("[name='full_name']").addClass("border border-danger");
         $("[name='full_name']").focus();
         if ($("[name='full_name']").siblings("label").text() == "") {
             $("[name='full_name']").parent().prepend(
-            $('<label class="text-danger" for="id_full_name">' + full_name_place_holder+'</label>'));
+                $('<label class="text-danger" for="id_full_name">' + full_name_place_holder + '</label>'));
         }
         messages.push(message);
         e.preventDefault();
-         
+
     } else {
         $(".error").text("All good");
         $("[name='full_name']").removeClass("border border-danger");
@@ -93,11 +93,11 @@ $("#submit-button").click(function (e) {
         $("[name='phone_number']").focus();
         if ($("[name='phone_number']").siblings("label").text() == "") {
             $("[name='phone_number']").parent().prepend(
-            $('<label class="text-danger" for="id_phone_nmber">' + phone_number_place_holder + '</label>'));
+                $('<label class="text-danger" for="id_phone_nmber">' + phone_number_place_holder + '</label>'));
         }
         messages.push(message_number);
         e.preventDefault();
-        
+
     } else {
         $("[name='phone_number']").removeClass("border border-danger");
         $("[name='phone_number']").siblings("label").remove();
@@ -110,7 +110,7 @@ $("#submit-button").click(function (e) {
         $("[name='street_address1']").focus();
         if ($("[name='street_address1']").siblings("label").text() == "") {
             $("[name='street_address1']").parent().prepend(
-            $('<label class="text-danger" for="id_street_address1">' + address_street_1_place_holder + '</label>'));
+                $('<label class="text-danger" for="id_street_address1">' + address_street_1_place_holder + '</label>'));
         }
         messages.push(message_street_1);
         e.preventDefault();
@@ -127,8 +127,8 @@ $("#submit-button").click(function (e) {
         $("[name='street_address2']").focus();
         if ($("[name='street_address2']").siblings("label").text() == "") {
             $("[name='street_address2']").parent().prepend(
-            $('<label class="text-danger" for="id_street_address2">' + address_street_2_place_holder + '</label>'));
-            }
+                $('<label class="text-danger" for="id_street_address2">' + address_street_2_place_holder + '</label>'));
+        }
         messages.push(message_street_2);
         e.preventDefault();
 
@@ -139,12 +139,12 @@ $("#submit-button").click(function (e) {
 
     //validate town_or_city
     if (check_town_or_city == true) {
-        message_town_or_city = "Sorry, but these symbols ( " + result_town_or_city + " ) are not allowed in field " + "<strong>" + town_or_city_place_holder + "</strong>" ;
+        message_town_or_city = "Sorry, but these symbols ( " + result_town_or_city + " ) are not allowed in field " + "<strong>" + town_or_city_place_holder + "</strong>";
         $("[name='town_or_city']").addClass("border border-danger");
         $("[name='town_or_city']").focus();
-        if ($("[name='town_or_city']").siblings("label").text()== ""){
+        if ($("[name='town_or_city']").siblings("label").text() == "") {
             $("[name='town_or_city']").parent().prepend(
-            $('<label class="text-danger" for="id_town_or_city">' + town_or_city_place_holder + '</label>')); 
+                $('<label class="text-danger" for="id_town_or_city">' + town_or_city_place_holder + '</label>'));
         }
         messages.push(message_town_or_city);
         e.preventDefault();
@@ -153,7 +153,7 @@ $("#submit-button").click(function (e) {
         $("[name='town_or_city']").removeClass("border border-danger");
         $("[name='town_or_city']").siblings("label").remove();
     }
-    
+
     //validate postcode
     if (check_postcode == true) {
         message_postcode = "Sorry, but these symbols ( " + result_postcode + " ) are not allowed in field " + "<strong>" + postcode_place_holder + "</strong>";
@@ -161,7 +161,7 @@ $("#submit-button").click(function (e) {
         $("[name='postcode']").focus();
         if ($("[name='postcode']").siblings("label").text() == "") {
             $("[name='postcode']").parent().prepend(
-            $('<label class="text-danger" for="id_town_or_city">' + postcode_place_holder + '</label>'));
+                $('<label class="text-danger" for="id_town_or_city">' + postcode_place_holder + '</label>'));
         }
         messages.push(message_postcode);
         e.preventDefault();
@@ -177,7 +177,7 @@ $("#submit-button").click(function (e) {
         $("[name='county']").focus();
         if ($("[name='county']").siblings("label").text() == "") {
             $("[name='county']").parent().prepend(
-            $('<label class="text-danger" for="id_county">' + county_place_holder + '</label>'));
+                $('<label class="text-danger" for="id_county">' + county_place_holder + '</label>'));
         }
         messages.push(message_county);
         e.preventDefault();
@@ -186,17 +186,17 @@ $("#submit-button").click(function (e) {
         $("[name='county']").removeClass("border border-danger");
         $("[name='county']").siblings("label").remove();
     }
-    
+
     text = "<ul>";
     messages.forEach(display_messages);
     text += "</ul>";
     $(".error").html(text);
 
-    function display_messages(message_disp){
-  
-        text +="<li>" + message_disp +"</li>";
+    function display_messages(message_disp) {
+
+        text += "<li>" + message_disp + "</li>";
     }
-      
+
 });
 
 
@@ -236,7 +236,7 @@ card.addEventListener('change', function (event) {
     } else {
         errorDiv.textContent = '';
     }
-  
+
 });
 
 // Handle form submit
@@ -244,7 +244,7 @@ var form = document.getElementById('payment-form');
 
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    
+
     card.update({ 'disabled': true });
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
@@ -291,7 +291,7 @@ form.addEventListener('submit', function (ev) {
         }).then(function (result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
-                var html =`
+                var html = `
                     <span class="icon" role="alert">
                     <i class="fas fa-times"></i>
                     </span>
@@ -312,4 +312,4 @@ form.addEventListener('submit', function (ev) {
         location.reload();
     });
 });
-  
+
