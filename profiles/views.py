@@ -1,4 +1,3 @@
-
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -7,9 +6,11 @@ from .forms import UserProfileForm
 
 from checkout.models import Order
 
+
 def updated(request):
 
     return render(request, 'profiles/updated_profile.html')
+
 
 @login_required
 def profile(request):
@@ -33,4 +34,3 @@ def profile(request):
     }
 
     return render(request, template, context)
-
