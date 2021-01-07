@@ -4,16 +4,19 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from django.db.models.signals import post_save
 
+
 class Subscriptions(models.Model):
     user = models.OneToOneField(to=User, null=True, on_delete=models.CASCADE)
     CustomerIdstripe = models.CharField(max_length=255)
     SubscriptionIdstripe = models.CharField(max_length=255)
-    expire_date = models.DateTimeField(auto_now_add=False, null=True, blank=True)
+    expire_date = models.DateTimeField(
+        auto_now_add=False, null=True, blank=True)
     subscription_date = models.DateTimeField(
         auto_now_add=False, null=True, blank=True)
 
     def __str__(self):
         return self.user.username
+
 
 class exercisesPlan(models.Model):
     how_it_works = models.TextField(max_length=2000, blank=True)
@@ -63,13 +66,3 @@ class exercisesPlan(models.Model):
 
     def __str__(self):
         return self.name
-
-   
-
-        
-
-
-       
-
-        
-

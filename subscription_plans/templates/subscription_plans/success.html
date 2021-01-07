@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+<!-- Success page -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 text-center p-0 m-0">
@@ -13,7 +14,7 @@
     <div class="row">
         <div class="col-md-6 m-5">
             <div class="float-end m-5">
-            <p class="mx-auto fs-5"> Thank you now You can access EXERCISES & NUTRITION PLANS.Please see your subscription</p>
+            <p class="mx-auto fs-5"> Thank you now You can access EXERCISES & NUTRITION PLANS. Please see your subscription</p>
             <a  class="btn btn-style" href="{% url 'subscription_plans' %}">See Subscriptions</a>
             </div>
         </div>
@@ -24,5 +25,4 @@
 {% endblock %}
 
 {% block postloadjs %}
-
 {% endblock %}

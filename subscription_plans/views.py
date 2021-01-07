@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404, redirect, reverse
+from django.shortcuts import render, HttpResponse, get_object_or_404, redirect,
+from django.shortcuts import reverse
 from django.http.response import JsonResponse
 from django.contrib.auth.decorators import login_required
 from subscription_plans.models import Subscriptions, exercisesPlan
@@ -13,7 +14,9 @@ from dateutil.relativedelta import relativedelta
 from datetime import date
 import stripe
 
+
 def check_subscription(request):
+    """ cheks the subscription if is active"""
     try:
         stripe_customer = Subscriptions.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -27,29 +30,31 @@ def check_subscription(request):
             return a
         else:
             a = "no"
-      
+
     except Subscriptions.DoesNotExist:
-       messages.error(request, "Sorry, only subscribed users can access this service")
+        messages.error(request, "Sorry, only subscribed users can \
+        access this service")
 
 
 @login_required
 def subscription_plans(request):
+    """ displays the subscription plan """
     try:
         stripe_customer = Subscriptions.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
         subscription = stripe.Subscription.retrieve(
             stripe_customer.SubscriptionIdstripe)
         product = stripe.Product.retrieve(subscription.plan.product)
-        expire_date=stripe_customer.expire_date
+        expire_date = stripe_customer.expire_date
 
         context = {
-                'subscription': subscription,
-                'product': product,
-                'expire_date': expire_date
+            'subscription': subscription,
+            'product': product,
+            'expire_date': expire_date
         }
-       
+
         return render(request, 'subscription_plans/subscription_plans.html', context)
-        
+
     except Subscriptions.DoesNotExist:
         return render(request, 'subscription_plans/subscription_plans.html')
 
@@ -66,6 +71,8 @@ def stripe_config(request):
 
 @csrf_exempt
 def create_checkout_session(request):
+    """ creates the checkout session"""
+
     if request.method == 'GET':
         domain_url = settings.DOMAIN_URL
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -89,11 +96,12 @@ def create_checkout_session(request):
         except Exception as e:
             messages.error(request, f'{str(e)}')
             return JsonResponse({'error': str(e)})
-            
 
 
 @login_required
 def success(request):
+    """ on success the custumer reurned to the subscription plan page and \
+    status of the subscription is desplayed """
     try:
         stripe_customer = Subscriptions.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -108,7 +116,8 @@ def success(request):
             'expire_date': expire_date
         }
         messages.success(
-            request, "you have successfully subscribed, and now you granted to access the exercises and nutrition plans")
+            request, "you have successfully subscribed, and now you granted to \
+            access the exercises and nutrition plans")
         return redirect(reverse('subscription_plans'))
 
     except Subscriptions.DoesNotExist:
@@ -117,17 +126,20 @@ def success(request):
         return redirect(reverse('subscription_plans'))
 
     return redirect(reverse('subscription_plans'))
-   
 
 
 @login_required
 def declined(request):
+    """ the payment not successull"""
+
     return render(request, 'subscription_plans/cancel.html')
 
 
 @require_POST
 @csrf_exempt
 def stripe_webhook(request):
+    """ the webhooks make sure the payment succesfull and a \
+    new subscriber recorded in the database"""
     stripe.api_key = settings.STRIPE_SECRET_KEY
     endpoint_secret = settings.STRIPE_SUB_WEBHOOK
     payload = request.body
@@ -141,7 +153,7 @@ def stripe_webhook(request):
     except ValueError as e:
         # Invalid payload
         return HttpResponse(status=400)
-        
+
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
         return HttpResponse(status=400)
@@ -150,7 +162,7 @@ def stripe_webhook(request):
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
         session2 = event
-    
+
         # Fetch all the required data from session
         client_reference_id = session.get('client_reference_id')
         stripe_customer_id = session.get('customer')
@@ -158,23 +170,24 @@ def stripe_webhook(request):
         stripe_subscription_created = session2.get('created')
         theDateOfSubscription = date.fromtimestamp(stripe_subscription_created)
         expire_date = theDateOfSubscription + relativedelta(months=+3)
-        
+
         # Get the user and create a new StripeCustomer
         user = User.objects.get(id=client_reference_id)
         Subscriptions.objects.create(
             user=user,
             CustomerIdstripe=stripe_customer_id,
             SubscriptionIdstripe=stripe_subscription_id,
-            subscription_date = theDateOfSubscription,
-            expire_date = expire_date)
-        
+            subscription_date=theDateOfSubscription,
+            expire_date=expire_date)
+
         messages.success(request, "You have successuly subscribed")
-       
+
     return HttpResponse(status=200)
 
 
 @login_required
 def all_exercises_plans(request):
+    """ the exercises plans will be displayed to active subscriber"""
     try:
         exercises = exercisesPlan.objects.all()
         stripe_customer = Subscriptions.objects.get(user=request.user)
@@ -198,11 +211,12 @@ def all_exercises_plans(request):
 
     return render(request, 'subscription_plans/subscription_plans.html')
 
+
 def exercise_details(request,  exercise_id):
     exercise_details = get_object_or_404(exercisesPlan, pk=exercise_id)
-    
-    context={
-        'exercise_details':exercise_details,
+
+    context = {
+        'exercise_details': exercise_details,
         'subscription':  check_subscription(request)
     }
     return render(request, "subscription_plans/exercise_details.html", context)

@@ -224,8 +224,11 @@ JavaScript tested with:
 
 The functionality tested manually, it works and updates the information.
 
+### subscription_plans 
 
-
+admin, models, views tested with:
+    - [http://pep8online.com/](http://pep8online.com/) - no major problems found, except some line are slightly too long.
+    
 ### Code Validation
 
 To validate my CSS and HTML code I used [https://validator.w3.org/](https://validator.w3.org/) 
