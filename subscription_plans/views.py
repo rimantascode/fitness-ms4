@@ -150,8 +150,7 @@ def stripe_webhook(request):
     if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
         session2 = event
-        print(session2)
-
+    
         # Fetch all the required data from session
         client_reference_id = session.get('client_reference_id')
         stripe_customer_id = session.get('customer')
@@ -180,7 +179,6 @@ def all_exercises_plans(request):
         exercises = exercisesPlan.objects.all()
         stripe_customer = Subscriptions.objects.get(user=request.user)
         stripe.api_key = settings.STRIPE_SECRET_KEY
-        print(" stripe secret key" + stripe.api_key)
         subscription = stripe.Subscription.retrieve(
             stripe_customer.SubscriptionIdstripe)
         product = stripe.Product.retrieve(subscription.plan.product)

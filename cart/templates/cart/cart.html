@@ -92,25 +92,24 @@
 
 <!-- This code was copied from code instite e-commerce project -->
 <script type="text/javascript">
-    // Update quantity on click
-    $('.update-quantity').click(function() {
-        var form = $(this).prev('.update-form');
-        form.submit();
-    })
+// Update quantity on click
+$('.update-quantity').click(function () {
+    var form = $(this).prev('.update-form');
+    form.submit();
+});
 
-    // Remove item and reload on click
-    $('.remove-items').click(function (e) {
-        var csrfToken = "{{ csrf_token }}";
-        var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
-        var url = `/cart/remove/${itemId}/`;
-        var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
+// Remove item and reload on click
+$('.remove-items').click(function (e) {
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).attr('id').split('remove_')[1];
+    var size = $(this).data('product_size');
+    var url = `/cart/remove/${itemId}/`;
+    var data = { 'csrfmiddlewaretoken': csrfToken, 'product_size': size };
 
-        $.post(url, data)
-            .done(function () {
-                location.reload();
-            });
-    })
-    
+    $.post(url, data)
+        .done(function () {
+            location.reload();
+        });
+    });
 </script>
 {% endblock %}

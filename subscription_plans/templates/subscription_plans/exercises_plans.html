@@ -3,7 +3,6 @@
 
 {% block content %}
 <div class="container-fluid">
-    {{subscription}}
     {% if subscription.status == "active" %}
     <div class="row">
         {% for exercise in exercises %} 
