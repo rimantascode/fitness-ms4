@@ -180,7 +180,7 @@ Features planned, implemented, and outlined for later development.
 - [fontawsome](https://fontawesome.com/)
   - Used icons
 - [bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-  - Used icons
+  - Used for styling and grid system.
 - [Figma](https://www.figma.com/)
   - used to make a mockup
 - All the libraries including the flask micro Framework have to be installed. All of them are listed in the requirements.txt, how to install please see the **Deployment** section.
@@ -194,28 +194,30 @@ In this section will be provided the testing proccess and results. Because this 
 
 the JS code was tested using JSHint, no major error. The functionality - update the quantity and remove the products from the cart. If you will use the arrows it will increase or decrease the amount and the links upadate and remove work and also the buttons KEEP SHOPPING and SECURE CHECKOUT takes to the appropriate destination. 
 - [update-remove](source/update-remove.png)
-views and context tested and with [http://pep8online.com/](http://pep8online.com/) no errors found.
-the HTML was tested width [https://validator.w3.org/](https://validator.w3.org/) no errors found, except that it does not recognise jinja template language.
+views and context tested and with:
+-[http://pep8online.com/](http://pep8online.com/) no errors found.
+the HTML was tested width 
+- [https://validator.w3.org/](https://validator.w3.org/) no errors found, except that it does not recognise jinja template language.
 
 
 ### checkout
 views, webhook_handler, webbhooks, models, forms tested with:
-[http://pep8online.com/](http://pep8online.com/) - no major probelms found except some lines are slightly to long.
+- [http://pep8online.com/](http://pep8online.com/) - no major probelms found except some lines are slightly to long.
 
 The html files in templates forlder tested with:
-[https://validator.w3.org/](https://validator.w3.org/) - 
+- [https://validator.w3.org/](https://validator.w3.org/) - 
 no major problems found except that jinja templating couses and error.
 
 stripe_elements.js tested with:
-[https://jshint.com/](https://jshint.com/) - no major found just 2 warnings "'template literal syntax' is only available in ES6 (use 'esversion: 6')."
+- [https://jshint.com/](https://jshint.com/) - no major found just 2 warnings "'template literal syntax' is only available in ES6 (use 'esversion: 6')."
 
 Testing form validation:
-[form-validation](source/form-validation.jpg)
+- [form-validation](source/form-validation.jpg)
 
 The checkout:
-[form-before-submition](source/form-before-submition.png)
-[stripe-webhook](source/stripe-webhook.png)
-[email-confirmation](source/email.png)
+- [form-before-submition](source/form-before-submition.png)
+- [stripe-webhook](source/stripe-webhook.png)
+- [email-confirmation](source/email.png)
 
 ### home
 
@@ -263,7 +265,7 @@ admin, models, views tested with:
 - [http://pep8online.com/](http://pep8online.com/) - no major problems found, except some line are slightly too long.
 
 The html files in templates forlder tested with:
-[https://validator.w3.org/](https://validator.w3.org/) - 
+- [https://validator.w3.org/](https://validator.w3.org/) - 
 no major problems found except that jinja templating couses and error.
 
 ### base.html 
