@@ -36,17 +36,18 @@
 }
 /*--------------------------------------------- PRODUCT----------*/
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
-  float:left;
-  width:100%;
-  height:auto;
-  object-fit:cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    float:left;
+    width:100%;
+    height:auto;
+    object-fit:cover;
 }
 /*--------------------------------------------- BANER BENEATH MAIN NAV----------*/
+
 .hr-class {
     height:2px !important;
     border-width:0 !important;
@@ -54,23 +55,26 @@
     background-color:#D40000 !important;
 }
 /*--------------------------------------------- CATEGORIES ----------*/
+
 a .badge.category:hover {
     background: purple!important;
     color:white!important;
 }
 
-/*--------------------------------------------- SELECTOR FOR SORTING THE PRODUCTS ----------*/
+/*--------------------------------------------- SELECTOR FOR SORTING THE ßPRODUCTS ----------*/
 #sort-selector {
     height:30px;
     background-color:#f7f7f7;
     border:1px solid rgba(110, 106, 106, 0.767)!important;
 }
+
 .btn-style {
     background-color:#6452D2;
     color:#fff;
 }
 
 /*--------------------------------------------- UPDATE AND REMOVE BAG ITEMS ----------*/
+
 .update-quantity, .remove-items {
     cursor:pointer;
 }
@@ -89,12 +93,10 @@ a .badge.category:hover {
 }
 /*-------------------------------------------- ADD PRODUCT----------*/
 
-
 .form-group input,
 textarea, label {
- margin-top:15px;
+    margin-top:15px;
 }
-
 
 /*-------------------------------------------- PRODUCT FORM  ----------*/
 /* copied from completed project */

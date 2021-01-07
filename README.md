@@ -276,7 +276,7 @@ no major problems found except that jinja templating courses and error.
 base HTML validate not major error found. bases.html includes two navigations one for a bigger screen and the other for smaller screens.
 ### CSS Validation
 
-To validate my CSS and HTML code I used [https://validator.w3.org/](https://validator.w3.org/) 
+To validate my CSS code I used [https://validator.w3.org/](https://validator.w3.org/) 
 
 
 
