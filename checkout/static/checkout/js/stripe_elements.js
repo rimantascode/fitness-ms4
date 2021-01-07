@@ -1,4 +1,16 @@
-/*
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
+
+     /*
     Core logic/payment flow for this comes from here:
     https://stripe.com/docs/payments/accept-a-payment
     CSS from here: 
@@ -25,7 +37,7 @@ $("#submit-button").click(function (e) {
     var address_street_1 = $("[name='street_address1']").val();
     var adress_street1RGEX = /[^0-9a-zA-Z ]/g;
     var check_address_street_1 = adress_street1RGEX.test(address_street_1);
-    var result_phoneNamber = address_street_1.match(adress_street1RGEX, "");
+    var result_address_street_1 = address_street_1.match(adress_street1RGEX, "");
     var address_street_1_place_holder = $("[name='street_address1']").attr('placeholder');
 
     // take and proccess the value of street 2
@@ -66,7 +78,7 @@ $("#submit-button").click(function (e) {
             $("[name='full_name']").parent().prepend(
             $('<label class="text-danger" for="id_full_name">' + full_name_place_holder+'</label>'));
         }
-        messages.push(message)
+        messages.push(message);
         e.preventDefault();
          
     } else {
@@ -93,7 +105,7 @@ $("#submit-button").click(function (e) {
 
     //validate street address 1
     if (check_address_street_1 == true) {
-        message_street_1 = "Sorry, but these symbols ( " + result_phoneNamber + " ) are not allowed in field " + "<strong>" + address_street_1_place_holder + "</strong>";
+        message_street_1 = "Sorry, but these symbols ( " + result_address_street_1 + " ) are not allowed in field " + "<strong>" + address_street_1_place_holder + "</strong>";
         $("[name='street_address1']").addClass("border border-danger");
         $("[name='street_address1']").focus();
         if ($("[name='street_address1']").siblings("label").text() == "") {
