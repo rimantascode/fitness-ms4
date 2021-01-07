@@ -46,25 +46,29 @@ User stories shaped my idea of how to create this project.
 
 ## Design Process
 
-1. **Strategy plane:** There are a  lot of recipes websites, but I wanted to create my own app which would be not overloaded with information, and have a unique design. This project is B2C. Plus that was a good opportunity to get more familiar with the flask micro-framework. 
-2. **Scope plane:** When I run through all ideas and user stories I began to realize how the website should look and how the recipes would have to be displayed for the users. It has to have a navigation bar at the top and which would have mobile responsive. The big picture in the main page and also the big picture when the recipe will be seen in detail. The recipes would be displayed in the format of the cards, with sensitive information, such as how long would it take to cook and how difficult it is, what the ingredients will the user need in order to cook. And the buttons with add, edit, and delete functions. The footer with the links to the social media about as and contact us form. I added a few more features at the end of the project such as pagination and how old is the recipe in order to keep the newest visible first. 
-3. **Structure plane:** So when the decision was made of what features I will need, started to group the features. The user will land on the main page or in one of the categories. Decided to have a header in which would be navigation with the categories, the picture area on the main page. The main picture with a lot of dishes on the table. Add button and share links beneath. This part would stay the same all the time. Once clicked on of the categories the information from MongoDB would be pulled out and displayed in the cards with appropriate information. In the cards, they would be able to go to add, edit, or dish pages. This type of design is very easy to navigate no more than three clicks to reach the destination, and it easy learnable.
-4. **Skeleton plane:** Once the structure plane was in place started to put all together using Figma. Added 5 categories of the main ingredients. The user can get the results only related to the category - the main ingredient. Add button takes the user to the add recipe page which consists of the header and a form, once filled up and meats all requirements can be submitted. When the visitor clicks on the categories the cards appear( as you can see in the mock-up I changed the size of the cards and how is the picture displayed). The user can see the picture on the left side of the card and the information on the right side. The name of the recipe, the cooking time, and the difficulty level is displayed and the majority of the ingredients required are also displayed. Down below three buttons delete, edit, and see the recipe in detail. The Edit page will keep the same structure - the navigation, hero image add button, and share links In place, but beneath there is a form that can be edited and the button update recipe. Once the button clicked the user will be taken to the dish.html page to review the changes. In the dish page there is a floating button with delete, edit, and add recipe functions to let the user do with the recipe what he wants straightway. 
-5. **Surface plane:** When the skeleton plane was in place. Decided to do a research on what colors can make the people hungry? There were a lot of opinions, so narrowed down too much the colors. From Google fonts choice the fonts and finished the design. the footer took from materializecss and made the same color as navigation. 
+1. **Strategy plane:** The main aim is to build e-commerce website in which the customers would be able to join a fitness community, and purchase exercise plans and merchandise. What do I get in return? The income, If the customers will be registing I will be able to expanding the customers database, and send the newsletter width verias offers.
+2. **Scope plane:** Subscription-Based community, user profiles containing information that map to nutrition and/ or exercises plan.
+ Product review. 
+ Subscription-based payment model.
+ Individual item purchase capability.
+ Profiles for each customer.
+ Are able to sort the products by price and ratings. 
+ Authentication and authorisation mechanism for subscribers and administrators. 
+3. **Structure plane:** The main page will be representing what is the website about. The products will be desplayd, and the customer will be able to click on the picture and the detailed information will be displayed with an oportunity to buy the item. If the customer will disire to see the exercies plans, then will be asked to buy the subscription, and once it will be activated, the exrecises plans will be seen.
+4. **Skeleton plane:** Once the structure plane was in place started to put all together using Figma. In first place I thought to have a big picture in home page, but latter I decided to have a carousel. The grid of the products releated to the fitness dicided to have 4 per column on bigger screens and 2 large and medium, and one culumn on small screens. the cart can be accessed by clicking on the cart. The items in cart displayed in table and have the fucntionality to update and remove the items.
+5. **Surface plane:** When I had the idea how the website will look like matched the colors, the most realated to the fitness, when I have done the reasearch on what colours are used in the gym and fitness added those to my website.
+
+**Conclusion** The website look a bit different then in mockup represented, that is because I find adding some thinks or the other make look more simplier and better. 
+
 
 ## color Scheme
 
 - ![#000000](https://placehold.it/15/000000/000000?text=+) `black`
-
-
 - ![#008464 ](https://placehold.it/15/d40000/000000?text=+) `#d40000`
 - ![#008464 ](https://placehold.it/15/ffc107/000000?text=+) `#ffc107 bootstrap warning`
 - ![#008464 ](https://placehold.it/15/000F9A/000000?text=+) `#000F9A`
 - ![#008464 ](https://placehold.it/15/dc3545/000000?text=+) `#dc3545 bootsrap danger`
-- ![#008464 ](https://placehold.it/15/dc3545/000000?text=+) `#dc3545 bootsrap danger`
-
 - ![#008464 ](https://placehold.it/15/6452d2/000000?text=+) `#6452d2`
-- ![#008464 ](https://placehold.it/15/0dcaf0/000000?text=+) `#0dcaf0 bootsrap info`
 - ![#008464 ](https://placehold.it/15/0dcaf0/000000?text=+) `#0dcaf0 bootsrap info`
 - ![#008464 ](https://placehold.it/15/6c757d/000000?text=+) `#6c757d`
 
@@ -76,7 +80,7 @@ sans-serif.
 
 The website is a little bit different than in the mockup. Does not contain the about us and contact us pages as it is very simple, and the structure remained the same except the form and a text.
 
-- [Mockup](https://www.figma.com/file/qRXUafOtVvw52gEOa81RPL/Untitled?node-id=0%3A1)
+- [Mockup](https://www.figma.com/file/nLzb97S2rjPSuE9RAmZff3/Untitled?node-id=0%3A1)
 
 ## Features
 
@@ -107,11 +111,11 @@ Features planned, implemented, and outlined for later development.
 - Implement the quick way to add exercises plans using backend.
 - Sort the products by categaries, price alhabeticly.
 - Search the product in the store.
-- in the home page the customer would be able to see the most popular and newst items.
-- checkout form validation.
+- In the home page the customer would be able to see the most popular and newst items.
+- Checkout form validation.
 - Messages displaying on the top of the page, telling what actions is doing the website. for example when user loggs in it tells to the user that he is logged in. 
 - Footer.
-- News letter
+- News letter.
 
 
 
@@ -120,7 +124,7 @@ Features planned, implemented, and outlined for later development.
 
 - Documentation - ReadMe File, Licence & Mockups.
 - Colour Scheme.
-- Login mechanism
+- Login mechanism.
 - Responsive design - Mobile First.
 - Authentication.
 - Logo.
@@ -148,7 +152,7 @@ Features planned, implemented, and outlined for later development.
 - Nutrition plans, not logged in user would be able to see 10 plans.
 - In the home page the customer would be able to see the most popular and newst items.
 - Footer.
-- News letter
+- News letter.
 
 
 ## Technologies Used.
@@ -286,99 +290,87 @@ Tested on Google Chrome, Opera, Mozilla firefox. No issues.
 
 Used Google Chrome, Opera, Mozilla Firefox browser to test the responsiveness, for all sizes looks satisfing, but on Galxy fold does not look, it has to be looked in to it.
 
-## Deployment
+## Deployment localy
 
 The process involved:
 
 - In this project, you have to use Code institute template [here](https://github.com/Code-Institute-Org/gitpod-full-template).
-- Click the green button "use this template" 
+- Click the green button "use this template" .
 - How to create a new repository [here](https://docs.github.com/en/enterprise/2.15/user/articles/create-a-repo) , but in this case enter the title of the project, the description, choose privet or poblic, and click create repository from template. 
-- On the GitHub repository settings page move to GitHub Pages section
-- Change source to master branch. (Or any desired branch)
-
+- On the GitHub repository settings page move to GitHub Pages section.
+- Change source to master branch. (Or any desired branch).
 - Once the workspace is ready:
-- In the terminal, in your root directory
-- Type 'git clone ' followed by the code taken from the GitHub repository
-- `https://github.com/rimantascode/MS3-cookbook.git`
-- for example `git clone https://github.com/rimantascode/MS3-cookbook.git`
-- Select all files and move out of the folder MS3-cookbook into the root directory. 
+- In the terminal, in your root directory.
+- Type 'git clone ' followed by the code taken from the GitHub repository.
+- `git@github.com:rimantascode/fitness-ms4.git`
+- for example `git clone git@github.com:rimantascode/fitness-ms4.git` 
 - Install requirements.txt by typing in the terminal 
 - `pip3 install -r requirements.txt`
-
-- create the database in [mongoDB](https://www.mongodb.com/) as it shown in the picture. cook_book is a database, and categories, difficulty, prep_time, recipe are the collections.
-- ![mongoDB structure](source/mongoDB.png)
-
-- create an enviroment variable in gitpod settings,[gitod settings](https://gitpod.io/settings/)
-
-- ![Environment Variable](source/MONGO_URI.jpg)
-- value is equel:
-mongodb+srv://<username>:<password>@<cluster_name>-ocous.mongodb.net/<database_name>?retryWrites=true&w=majority
-- Organization/Repository: is your GitHub **username**
-- Also you need to create the **SECRET_KEY** environment variables value can be anything just do **not** do simple, like 1234 
-- ![SECRET_KEY](source/SECRET_KEY.jpg)
-
-#### IMPORT COLLECTIONS INTO mongoDB
-
-- Now we need to import the data into the collections.
-- Type in the terminal
-
-- `mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@<cluster_name>/<DATABASE> --collection categories --type json --file categories.json`
-
-- `mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@<cluster_name>/<DATABASE> --collection difficulty --type json --file difficulty.json`
-
-- `mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@<cluster_name>/<DATABASE> --collection prep_time --type json --file prep_time.json`
-
-- `mongoimport --uri mongodb+srv://<USERNAME>:<PASSWORD>@<cluster_name>/<DATABASE> --collection recipe --type json --file recipes.json`
-
-- Type in the terminal
-- `python3 app.py`
-- click on the blue button to open in the browser.
-- It is ready to use. 
-
-- Feel free to make any changes to it.
-- Your website with any made changes will appear.
-- Saved changes in gitpod and to the website will appear after refreshing the page.
-
+- In this cloned version the pictures might not be the best quality. But you can easily add new product by using you own pictures, it is advisible to use the same size pictures for the best look.
+- create an enviroment variables in GitPod settings.
+- You have to will have to register to stripe and retrieve the keys.
+- Also create the product in the strpe and retrieve the Price ID. 
+- SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_SUB_WEBHOOK(this is for subscription webhook, secret key),
+- DEVELOPMENT set to True.
+- run the command line in the terminal 
+- `python3 manage.py runserver`
+- readt to use!!!
 
 ## Deploy to Heroku
-
+- You will need to create s3 bucket in [AWS](https://aws.amazon.com)
+- Configure Bucket Cors and Policy.
+- You have to create profile using IAM and give the user full access to the Bucket.
+- create "media" folder and uploud the pictures, or if you will be adding them manualy they will be saved there.
+- Static files will be collected automatically on deployment to Heroku, but before deploying the first time run `heroku config:add DISABLE_COLLECTSTATIC=1`
+in the terminal before deployment to heroku.
 - You have to create a new app in [Heroku](https://dashboard.heroku.com/new-app)
 - give a unique name and choose a region to Europe.
-- a gave the name of the app "testing-deploymenta" for testing porpuse.
+- a gave the name of the app "testing-deployment" for testing porpuse, or any other dired name. 
+- Create Postgres database in Resources. It is free version.
 - Click on Settings, and then the button "Reveal Config Vars".
-- Enter MONGU_URI with the value you used to create environment variable.
-- Enter SECRET_key with value you used to create environment variable.
-- PORT value is 5000.
-- IP value is 0.0.0.0.
-- in the terminal
+- ![view-the-required-variables](source/heroku-variables.png)
+- AWS_ACCESS_KEY_ID - Your unique
+- AWS_SECRET_ACCESS_KEY your unique
+- DATABASE_URL - this will be when you will create the database.
+- DOMAIN_URL - Your heroku app url 
+- EMAIL_HOST_PASS - recommended to use google service to send emails.
+- EMAIL_HOST_USER - recommended to use google service to send emails.
+- SECRET_KEY - Generate online one.
+- STRIPE_PUBLIC_KEY - Get it from stripe.
+- STRIPE_SECRET_KEY - Get it from stripe. 
+- STRIPE_SUB_WEBHOOK - Get it from stripe, but first create webhook pointend.
+- STRIPE_WH_SECRET - Get from the stripe this a webhook pointed key to bay single items.
+- USE_AWS it has to be set to "True". 
 - `heroku login -i` , and enter the credentials.
 - In the terminal, go to deploy section you will see the line similar to this.
 - `heroku git:remote -a testing-deploymenta`
 - create requirements.txt
 - `pip3 freeze > requirements.txt`
-- create Prockfile with a capital "P" this is a requirement.
-- ` echo web: python app.py > Procfile`- and then `git add . ` and `git commit -m"added requirements.txt and Prock files" `
+- create Prockfile with a capital "P" this is a requirement, and this is what you add in to it `web: gunicorn fitness_ms4.wsgi:application`
+- In settings.py add the heroku app address to ALLOWED_HOSTS.
+In settings.py add the correct values to AWS_STORAGE_BUCKET_NAME and AWS_S3_REGION_NAME.
+- and then `git add . ` and `git commit -m"added requirements.txt and Prock files" `
 - `git push heroku master`
 - once it has been pushed, in the terminal.
-- `heroku ps:scale web=1`
 - ready to use.
 - ` heroku open`
 
 
 ## Credits
 - Thank you.
-- [Waitrose.com](https://www.waitrose.com/content/waitrose/en/home/recipes/recipe_directory/b/breaded_chicken_andwatercresssalad.html#_) - used the recipes, and the pictures for learnign and demonstrative porposes only. Once the project will be assested all data will be deleted.
-
+- [used-products-pictures-for-learning-porpuses]{https://www.myprotein.com/sports-nutrition/pure-caffeine-tablets/10529801.html)
 - Thank you.
-- [css tricks](https://css-tricks.com/line-clampin/) for a piece of code made to look my text very nice faded out.
+- [used-products-pictures-for-learning-porpuses](https://www.fitness-superstore.co.uk/body-power-15mm-floor-tile-ramp-edge.html)
 Thank you.
 - [photo](https://www.flickr.com/photos/dennis/102679650
 https://live.staticflickr.com/32/102679650_cd10235c8f_k_d.jpg) for very nice picture.)
-
+- Thank You
+[picture](https://www.pexels.com/photo/photo-of-woman-raising-dumbbells-2475878)
+[picture](https://www.pexels.com/photo/balance-body-exercise-female-374101/)
+[picture](https://www.pexels.com/photo/yoga-instructor-helping-a-student-3822719/)
 
 ### Acknowledgements
 
 Thank you inspiration, very usefull guidence and tips:
-
-- Seun Owonikoko @seun_mentor
+- Precious_Mentor
 - Code Institute

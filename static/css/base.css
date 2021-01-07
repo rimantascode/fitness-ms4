@@ -141,8 +141,8 @@ textarea, label {
     }
 }
 
-@media (max-width:360px){
-    .table-for-sm {
-
+@media (max-width:794px){
+        .carousel-item{
+        height:40vh !important;
     }
 }
