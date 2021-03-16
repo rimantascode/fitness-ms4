@@ -187,7 +187,7 @@ Features planned, implemented, and outlined for later development.
   - Used for styling and grid system.
 - [Figma](https://www.figma.com/)
   - used to make a mockup
-- All the libraries including the flask micro Framework have to be installed. All of them are listed in the requirements.txt, how to install please see the **Deployment** section.
+- All the libraries including the Django macro Framework have to be installed. All of them are listed in the requirements.txt, how to install please see the **Deployment** section.
 
 
 ## Manual Testing
